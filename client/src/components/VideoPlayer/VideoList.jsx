@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoItem from './VideoItem';
+import '../VideoPlayer/VideoItem.scss';
 
 export default function VideoList({videos, handleVideoSelect}) {
     const renderedVideos =  videos.map((video) => {
@@ -7,5 +8,5 @@ export default function VideoList({videos, handleVideoSelect}) {
         
     });
 
-    return <div className='ui relaxed divided list'>{renderedVideos}</div>;
+    return <div className='video'>{renderedVideos}</div>;
 }

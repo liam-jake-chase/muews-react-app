@@ -1,0 +1,66 @@
+
+
+.video {
+
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+       width: 50%;
+        
+    }
+
+    &__image {
+        height: 5rem;
+        width: 8rem;
+        border-radius: 3px;
+    }
+
+    &__title {
+        font-size: .75rem;
+        width: 70%;
+        margin-left: 1.75rem;
+    }
+
+    &__player {
+        height: 20rem;
+        width: 35rem;
+        background-image: url('../../assets/tv-frame.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        border-radius: 10px;
+    }
+
+    &__player-embed {
+        height: 18.2rem;
+        width: 32.2rem;
+        border: none;
+        margin-top: .68rem;
+        
+    }
+
+    &__no-video {
+        height: 20rem;
+        width: 35rem;
+        display: flex;
+        justify-content: center;
+        margin-left: 15rem;
+        background-image: url('../../assets/tv-frame.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    &__player-title {
+        margin-top: 0;
+    }
+
+}

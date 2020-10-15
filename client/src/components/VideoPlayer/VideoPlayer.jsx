@@ -19,7 +19,7 @@ export default class VideoPlayer extends Component {
             this.setState({
                 videos: response.data.items
             })
-            console.log("this is resp",response);
+            console.log(response);
         };
         handleVideoSelect = (video) => {
             this.setState({selectedVideo: video})
@@ -27,7 +27,7 @@ export default class VideoPlayer extends Component {
     
         render() {
             return (
-                <div className='ui container' style={{marginTop: '1em'}}>
+                <div className='ui container'>
                     <SearchBar handleFormSubmit={this.handleSubmit}/>
                     <div className='ui grid'>
                         <div className="ui row">
