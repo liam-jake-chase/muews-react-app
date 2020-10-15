@@ -1,0 +1,23 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "nodemon": "^2.0.5",
+    "react-filter-search": "^1.0.11",
+    "react-router-dom": "^5.2.0",
+    "server": "^1.0.30",
+    "uuidv4": "^6.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

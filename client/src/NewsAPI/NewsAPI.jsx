@@ -33,7 +33,8 @@ export default class NewsAPI extends Component {
             {this.state.newsResults.map(data =>               
             <NewsSection 
                 key={uuid()}
-                author={data.author}
+                title={data.title}
+                url={data.url}
             />)}                     
                 
             </div>

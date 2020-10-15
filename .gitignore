@@ -2,6 +2,7 @@
 
 # dependencies
 **/node_modules
+**/client/path_to_profile
 /.pnp
 .pnp.js
 
