@@ -3,7 +3,7 @@
 .video {
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     &__item {
        width: 50%;
@@ -52,8 +52,7 @@
         background-image: url('../../assets/tv-frame.png');
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        margin-top: 1rem;
+        background-size: cover;        
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;

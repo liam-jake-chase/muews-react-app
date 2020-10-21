@@ -28,7 +28,6 @@ export default class VideoPlayer extends Component {
         render() {
             return (
                 <div className='ui container'>
-                    <SearchBar handleFormSubmit={this.handleSubmit}/>
                     <div className='ui grid'>
                         <div className="ui row">
                             <div className="eleven wide column">
@@ -39,6 +38,7 @@ export default class VideoPlayer extends Component {
                             </div>
                         </div>
                     </div>
+                    <SearchBar handleFormSubmit={this.handleSubmit}/>
                 </div>
             )
         }
