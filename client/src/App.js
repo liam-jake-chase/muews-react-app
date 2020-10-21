@@ -1,20 +1,87 @@
-import React from 'react';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import Footer from './components/Footer/Footer'
+import Main from './components/Main/Main'
 import MainTwo from './components/MainTwo/MainTwo'
-import Header from './components/Header/Header'
+import axios from 'axios';
+import Youtube from './components/VideoPlayer/Youtube'
 import './App.css';
+import React, { Component } from 'react'
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
-function App() {
-  return (
-    <div className="App">        
-      <MainTwo />          
-      <div className="footer__main">
-      <Footer />
-      </div>     
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    searchName: '',
+    newsResults: [],
+    videos: [],
+    selectedVideo: null
 }
 
-export default App;
+handleSearchName = (event) => {
+    this.setState({
+       searchName: event.target.value 
+    })
+}
+
+getNews = () => {
+      axios
+          .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=10&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
+          .then(response => {
+              console.log(response.data.articles)
+              this.setState({
+                  newsResults: response.data.articles
+              })
+          })
+          
+          
+  }
+getVideo = async () => {
+      const response = await Youtube.get('/search', {
+          params: {
+              q: this.state.searchName
+          }
+      })
+      console.log(response)
+      this.setState({
+        videos: response.data.items
+    })
+}
+
+ handleVideoSelect = (video) => {
+        this.setState({selectedVideo: video})
+    }  
+
+handleSubmit = (event) => {
+  event.preventDefault();
+  this.getNews();
+  this.getVideo();
+      
+}
+  
+  render() {
+    return (
+      <div className="App">        
+        <BrowserRouter>              
+        <Switch>           
+          <Route exact path="/" render={(props) => ( <Main {...props}   
+              value={this.state.searchName} 
+              onChange={this.handleSearchName}
+              handleSubmit={this.handleSubmit}
+            />
+          )}/>
+          <Route path="/MainTwo" render={(props) => <MainTwo {...props}     
+              newsResults={this.state.newsResults}
+            />}/>
+            {/* <Route exact path="/" component = {Main} />
+            <Route exact path="/MainTwo" component = {MainTwo} /> */}
+
+        </Switch>
+         </BrowserRouter>          
+       <div className="footer__main">
+        <Footer />
+        </div>     
+     
+     </div>
+    )
+  }
+}
