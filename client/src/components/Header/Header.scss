@@ -1,13 +1,46 @@
+@font-face {
+    font-family: "Alltheroll";
+    src: url('../../assets/Alltherollpersonaluse-DOJE0.otf') format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Guaraldo";
+    src: url('../../assets/GuaraldoPersonalUse-lggDe.ttf') format("truetype");
+    font-style: normal;
+}
 
 .header {
     height: 8rem;
     width: 100%;
     background-color: #3b74ad;   
+    display: flex;
+    justify-content: space-between;
+
+    &__right {
+        display: flex;
+    }
     
     &__logo {
         height: 8rem;
         width: 10rem;
-        display: flex;
+        display: flex;       
 
+    }
+
+    &__band {
+        font-family: "Guaraldo";
+        font-size: 2rem;
+        margin-top: 3rem;
+        margin-right: 1rem;
+        color: #0f1a25;
+    }
+
+    &__band-image {
+        border-radius: 50%;
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-top: 2rem;
+        margin-right: 1rem;
     }
 }

@@ -12,6 +12,10 @@ export default class Header extends Component {
                 <NavLink to="/">
                     <img src={Logo} className="header__logo" alt="Muews Logo" />
                 </NavLink>
+                <div className="header__right">
+                <img src={this.props.image} className="header__band-image" />
+                <div className="header__band">{this.props.name}</div>
+                </div>
             </div>
             </>
         )

@@ -15,7 +15,10 @@ export default class MainTwo extends Component {
     render() {
         return (
             <div>
-                <Header />                
+                <Header 
+                name={this.props.artistInfo.name}
+                image={this.props.artistInfo.thumb_url}
+                />                
                 <div className="card__wrapper">
                     <div className="card__one">
                         <VideoDetail video={this.props.selectedVideo}/>

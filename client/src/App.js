@@ -13,6 +13,8 @@ export default class App extends Component {
     searchName: '',
     newsResults: [],
     videos: [],
+    artistInfo: [],
+    concertInfo: [],
     selectedVideo: null,
     redirect: false
 }
@@ -50,13 +52,23 @@ getVideo = async () => {
 getArtist = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
-    .then(response => console.log(response.data))
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        artistInfo: response.data
+      })
+    })
 }
 
 getEvent = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
-    .then(response => console.log(response.data))
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        concertInfo: response.data
+      })
+    })
 }
 
  handleVideoSelect = (video) => {
@@ -98,6 +110,7 @@ handleSubmit = (event) => {
           handleVideoSelect={this.state.handleVideoSelect}
           videos={this.state.videos}
           handleVideoSelect={this.handleVideoSelect}
+          artistInfo={this.state.artistInfo}
           />
           )}/>
           
