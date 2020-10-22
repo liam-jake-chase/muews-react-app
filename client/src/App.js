@@ -27,7 +27,7 @@ handleSearchName = (event) => {
 
 getNews = () => {
       axios
-          .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=10&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
+          .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=5&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
           .then(response => {
               console.log(response.data.articles)
               this.setState({
@@ -71,6 +71,32 @@ getEvent = () =>{
     })
 }
 
+// getArtistData = () => {
+//   axios
+//     .get(`https://musicbrainz.org/ws/2/artist?query=${this.state.searchName}&limit=1`)
+//     .then(response => console.log(response.data))
+// }
+
+getArtistData = () => {
+  axios
+    .get(`https://api.discogs.com/database/search?q=${this.state.searchName}&artist&token=ZHbyKpYDpUAfgJsaGxIDxBvqnEiCSybfkHQcYFYs`)
+    .then(response => {
+      console.log(response.data.results)
+      let artistName = response.data.results[0].id
+      let idSearch = () => {
+        axios
+        .get(`https://api.discogs.com/artists/${artistName}`)
+        .then(response => console.log(response))
+        
+
+      }
+      idSearch();
+    })
+
+
+
+}
+
  handleVideoSelect = (video) => {
         this.setState({selectedVideo: video})
   }  
@@ -83,6 +109,7 @@ handleSubmit = (event) => {
   this.getVideo();
   this.getArtist();
   this.getEvent();
+  this.getArtistData();
   this.setState({
     redirect: true
   })
