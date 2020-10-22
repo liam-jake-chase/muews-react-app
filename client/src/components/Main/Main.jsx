@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Main.scss'
 import animatedLogo from '../../assets/Logo-movie-wide.mp4';
-import search from '../../assets/Search.svg';
-import { Link , withRouter , Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 export default class Main extends Component {

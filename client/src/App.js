@@ -93,7 +93,13 @@ handleSubmit = (event) => {
               redirect={this.state.redirect}
             />
           )}/>
-          <Route path="/MainTwo" component = {MainTwo} />
+          <Route path="/MainTwo" render={(props) => ( <MainTwo {...props}
+          newsResults={this.state.newsResults}
+          handleVideoSelect={this.state.handleVideoSelect}
+          videos={this.state.videos}
+          handleVideoSelect={this.handleVideoSelect}
+          />
+          )}/>
           
         </Switch>
          </BrowserRouter>          

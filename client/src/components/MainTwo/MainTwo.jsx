@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
 import NewsSection from '../NewsAPI/NewsSection';
-import ConcertAPI from '../ConcertAPI/ConcertAPI'
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header'
-import VideoPlayer from '../VideoPlayer/VideoPlayer'
-import Youtube from '../VideoPlayer/Youtube'
-import VideoList from '../VideoPlayer/VideoList'
+import ConcertAPI from '../ConcertAPI/ConcertAPI';
+import Header from '../Header/Header';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import VideoList from '../VideoPlayer/VideoList';
 import VideoDetail from '../VideoPlayer/VideoDetail';
 import { uuid } from 'uuidv4';
-import './MainTwo.scss'
+import './MainTwo.scss';
 
 export default class MainTwo extends Component {
-   
-      
-   
 
    
     
@@ -24,19 +18,17 @@ export default class MainTwo extends Component {
                 <Header />                
                 <div className="card__wrapper">
                     <div className="card__one">
-                    {/* {this.state.newsResults.map(data =>               
-            //     <NewsSection 
-            //      key={uuid()}
-            //     title={data.title}
-            //     url={data.url}
-            // />)}                     */}
+                        <VideoDetail video={this.props.selectedVideo}/>
+                        <VideoList handleVideoSelect={this.props.handleVideoSelect} videos={this.props.videos}/>
+                    {/* {this.props.newsResults.map(data =>               
+                        <NewsSection 
+                        key={uuid()}
+                        title={data.title}
+                        url={data.url}
+                        />)}                     */}
+                      
                     </div>
-                    <div className="videoplayer__main">
-                     
-                     
-                     {/* <VideoDetail video={this.state.selectedVideo}/>
-                     <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> */}
-                     </div>  
+                   
                     <div className="card__wrapper-two">
                         <div className="card__two">
                             {/* <NewsAPI /> */}
