@@ -6,9 +6,8 @@ import axios from 'axios';
 import Youtube from './components/VideoPlayer/Youtube'
 import './App.css';
 import React, { Component } from 'react'
-import {BrowserRouter, Switch, Route, useHistory} from 'react-router-dom';
-
-
+import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 export default class App extends Component {
@@ -42,17 +41,17 @@ getNews = () => {
           
           
   }
-getVideo = async () => {
-      const response = await Youtube.get('/search', {
-          params: {
-              q: this.state.searchName
-          }
-      })
-      console.log(response)
-      this.setState({
-        videos: response.data.items
-    })
-}
+// getVideo = async () => {
+//       const response = await Youtube.get('/search', {
+//           params: {
+//               q: this.state.searchName
+//           }
+//       })
+//       console.log(response)
+//       this.setState({
+//         videos: response.data.items
+//     })
+// }
 
 getArtist = () =>{
   axios
@@ -137,7 +136,7 @@ getArtistData = () => {
 handleSubmit = (event) => {
   event.preventDefault();
   this.getNews();
-  this.getVideo();
+  // this.getVideo();
   this.getArtist();
   this.getEvent();
   this.getArtistData();
@@ -156,8 +155,9 @@ handleSubmit = (event) => {
 
     return (
       <div className="App">        
-        <BrowserRouter>              
-        <Switch>           
+        <BrowserRouter> 
+        <AnimatePresence exitBeforeEnter>          
+        <Switch>          
           <Route exact path="/" render={(props) => ( <Main {...props}   
               value={this.state.searchName} 
               onChange={this.handleSearchName}
@@ -178,6 +178,7 @@ handleSubmit = (event) => {
           )}/>
           
         </Switch>
+        </AnimatePresence>   
          </BrowserRouter>          
        <div className="footer__main">
         <Footer />

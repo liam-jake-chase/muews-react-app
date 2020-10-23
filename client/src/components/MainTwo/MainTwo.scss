@@ -10,22 +10,33 @@
     background-color:  #7699bd;
     box-shadow: 5px 10px 18px #3b74ad;
     border-radius: 1rem;
-    height: 70rem;
+    height: 71rem;
     width: 35rem;
+    margin-top: .5rem;
+    
     
   
   }
 
   .card__wrapper-two {
     margin-top: 0;
+    width: 66rem;
+    margin-left: 1rem;
   }
 
   .card__two {
     background-color:  #9abadb;
     box-shadow: 5px 10px 18px #3b74ad;
     border-radius: 1rem;
+    border: none;
     height: 35rem;
     width: 65rem;
+    margin-right: 5rem;
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
     
   
   }
@@ -36,6 +47,84 @@
     border-radius: 1rem;
     height: 35rem;
     width: 55rem;
+    border: none;
+    margin-top: 1rem;
+    margin-right: 26rem;
   }
+
+  .card__four {
+    background-color:  #b5c9dd;
+    box-shadow: 5px 10px 18px #3b74ad;
+    border-radius: 1rem;
+    height: 71rem;
+    width: 16rem;
+    border: none;
+    margin-top: .5rem;
+    
+    
+  }
+
+  .hero{
+    
+    &__image {
+      border-radius: .5rem;
+      margin-top: .5rem;
+      height: 10rem;
+      width: 50rem; 
+      margin-left: 6rem;   
+      
+    }
+
+    &__wrapper {
+      position: relative;
+      
+    }
+
+    &__bio {
+      text-align: left;
+      margin-left: 1rem;
+      font-size: 1rem;
+    }
+
+    &__bio-text {
+      width: 95%;
+      text-align: left;
+      margin-left: 1rem;
+      line-height: 1.1rem;
+      font-size: .75rem;
+      
+    }
+  
+
+  }
+
+  .band {
+    display: flex;
+    flex-direction: column;    
+    margin-top: 0;
+    margin-bottom: 36rem;
+
+    &__header {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    &__header-two {
+      text-align: left;
+      font-size: 1rem;
+      
+    }
+
+    &__ul {
+      list-style: square;
+      line-height: 0rem;
+    }
+
+    &__member-name {
+      margin: auto;
+      text-align: left;
+    }
+  }
+  
 
   

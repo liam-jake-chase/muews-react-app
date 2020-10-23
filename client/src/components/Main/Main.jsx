@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 import './Main.scss'
 import animatedLogo from '../../assets/Logo-movie-wide.mp4';
 import { Redirect } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
+
+const pageTransition = {
+    in: {
+      opacity: 1
+    },
+    out: {
+      opacity: 0
+    }
+  };
 
 export default class Main extends Component {
 
    
    
     render() {
-
+        
         if (this.props.redirect) {
             return <Redirect to="/MainTwo" />
         }
         return (
             <>
+            <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
+                
             <div className="main">
                 <video src={animatedLogo} autoPlay loop className="main__logo" alt="Logo" />
                 <form className="main__form" onSubmit={this.props.handleSubmit}>                        
@@ -26,6 +38,7 @@ export default class Main extends Component {
                      />              
                 </form>
             </div>
+            </motion.div>
             </>
         )
     }

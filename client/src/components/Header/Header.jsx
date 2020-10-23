@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Logo from '../../assets/Logo-transparent.svg';
 import './Header.scss'
 import { Link } from 'react-router-dom';
-import facebook from '../../assets/Icon-facebook.svg'
+import facebook from '../../assets/Icon-facebook.svg';
+import searchButton from '../../assets/Search.svg';
 
 
 export default class Header extends Component {
@@ -11,7 +12,8 @@ export default class Header extends Component {
             <>
             <div className="header">
                 <Link to="/">
-                    <img src={Logo} className="header__logo" alt="Muews Logo" />
+                <img src={searchButton} className="header__search" alt="searchbutton logo" />
+                <img src={Logo} className="header__logo" alt="Muews Logo" />                
                 </Link>
                 <div className="header__right">
                 <img src={this.props.image} className="header__band-image" />

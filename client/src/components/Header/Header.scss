@@ -1,14 +1,4 @@
-@font-face {
-    font-family: "Alltheroll";
-    src: url('../../assets/Alltherollpersonaluse-DOJE0.otf') format("opentype");
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Guaraldo";
-    src: url('../../assets/GuaraldoPersonalUse-lggDe.ttf') format("truetype");
-    font-style: normal;
-}
+@import '../../partials/fonts';
 
 .header {
     height: 8rem;
@@ -24,8 +14,18 @@
     &__logo {
         height: 8rem;
         width: 10rem;
-        display: flex;       
+        display: flex;  
+        position: absolute; 
+        left: 7rem;
+        margin-top:.25rem;    
 
+    }
+
+    &__search {
+        height: 8rem;
+        width: 15rem;
+        position: absolute;
+        left: -2rem;
     }
 
     &__band {

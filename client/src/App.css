@@ -1,6 +1,10 @@
+@import './partials/_fonts.scss';
+
 .App {
   text-align: center;
-  background-color: #c3cbdb;  
+  background-color: #c3cbdb; 
+  font-family: "Guaraldo"; 
+  
 }
 
 .App-logo {
