@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewsSection from '../NewsAPI/NewsSection';
 import ConcertAPI from '../ConcertAPI/ConcertAPI';
 import Header from '../Header/Header';
-import VideoPlayer from '../VideoPlayer/VideoPlayer';
+
 import VideoList from '../VideoPlayer/VideoList';
 import VideoDetail from '../VideoPlayer/VideoDetail';
 import { uuid } from 'uuidv4';
@@ -13,6 +13,8 @@ export default class MainTwo extends Component {
    
     
     render() {
+
+        
         return (
             <div>
                 <Header 
@@ -30,7 +32,13 @@ export default class MainTwo extends Component {
                    
                     <div className="card__wrapper-two">
                         <div className="card__two">
-                           {/* <img src={this.props.artistInfo.image_url} className="hero-image" alt="Band hero image" />     */}
+                        <img src={this.props.audioDB.strArtistBanner} className="hero-image" alt="Band hero image" />    
+                        <div>{this.props.audioDB.strBiographyEN}</div>
+                        
+                        <div>{this.props.discogsInfo.members && this.props.discogsInfo.members.map(member => {
+                            return <p>{member.name}</p>
+                        })}
+                        </div>
                             
                         </div>
                         <div className="card__three">

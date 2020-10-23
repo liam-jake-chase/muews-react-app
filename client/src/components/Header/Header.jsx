@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../../assets/Logo-transparent.svg';
 import './Header.scss'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import facebook from '../../assets/Icon-facebook.svg'
 
 
@@ -10,9 +10,9 @@ export default class Header extends Component {
         return (
             <>
             <div className="header">
-                <NavLink to="/">
+                <Link to="/">
                     <img src={Logo} className="header__logo" alt="Muews Logo" />
-                </NavLink>
+                </Link>
                 <div className="header__right">
                 <img src={this.props.image} className="header__band-image" />
                 <div className="header__band">{this.props.name}</div>

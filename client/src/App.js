@@ -8,6 +8,9 @@ import './App.css';
 import React, { Component } from 'react'
 import {BrowserRouter, Switch, Route, useHistory} from 'react-router-dom';
 
+
+
+
 export default class App extends Component {
   state = {
     searchName: '',
@@ -15,6 +18,8 @@ export default class App extends Component {
     videos: [],
     artistInfo: [],
     concertInfo: [],
+    discogsInfo: [],
+    audioDB: [],
     selectedVideo: null,
     redirect: false
 }
@@ -60,6 +65,8 @@ getArtist = () =>{
     })
 }
 
+
+
 getEvent = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
@@ -71,11 +78,29 @@ getEvent = () =>{
     })
 }
 
-// getArtistData = () => {
-//   axios
-//     .get(`https://musicbrainz.org/ws/2/artist?query=${this.state.searchName}&limit=1`)
-//     .then(response => console.log(response.data))
-// }
+getData = () => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://rapidapi.p.rapidapi.com/search.php',
+    params: {s: this.state.searchName},
+    headers: {
+      'x-rapidapi-host': 'theaudiodb.p.rapidapi.com',
+      'x-rapidapi-key': '9ad5aa526emsh0dcf71b6c5b6a8ap13fe96jsn35c2391e2e7b'
+    }
+  };
+
+  axios 
+    .request(options)
+    .then(response => {
+      console.log(response.data.artists[0])
+      this.setState({
+        audioDB: response.data.artists[0]
+      })
+    })
+}
+
+
 
 getArtistData = () => {
   axios
@@ -86,20 +111,26 @@ getArtistData = () => {
       let idSearch = () => {
         axios
         .get(`https://api.discogs.com/artists/${artistName}`)
-        .then(response => console.log(response))
+        .then(response => {
+          console.log(response.data)
+          this.setState({
+            discogsInfo: response.data
+          })
+          
+          
+        })
         
 
       }
       idSearch();
     })
-
-
-
 }
 
  handleVideoSelect = (video) => {
         this.setState({selectedVideo: video})
   }  
+
+
 
 
 
@@ -110,6 +141,7 @@ handleSubmit = (event) => {
   this.getArtist();
   this.getEvent();
   this.getArtistData();
+  this.getData();
   this.setState({
     redirect: true
   })
@@ -120,6 +152,7 @@ handleSubmit = (event) => {
   
   render() {
    
+    
 
     return (
       <div className="App">        
@@ -135,9 +168,12 @@ handleSubmit = (event) => {
           <Route path="/MainTwo" render={(props) => ( <MainTwo {...props}
           newsResults={this.state.newsResults}
           handleVideoSelect={this.state.handleVideoSelect}
+          selectedVideo={this.state.selectedVideo}
           videos={this.state.videos}
           handleVideoSelect={this.handleVideoSelect}
           artistInfo={this.state.artistInfo}
+          discogsInfo={this.state.discogsInfo}
+          audioDB={this.state.audioDB}
           />
           )}/>
           
