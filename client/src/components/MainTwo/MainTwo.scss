@@ -49,17 +49,35 @@
     width: 55rem;
     border: none;
     margin-top: 1rem;
-    margin-right: 26rem;
+    margin-right: 1rem;
   }
 
   .card__four {
     background-color:  #b5c9dd;
     box-shadow: 5px 10px 18px #3b74ad;
     border-radius: 1rem;
-    height: 71rem;
+    height: 35rem;
     width: 16rem;
     border: none;
     margin-top: .5rem;
+    
+    
+  }
+
+  .card__wrapper-three {
+    display: flex;
+    flex-direction: row;
+  }
+  .card__five {
+    background-color:  #b5c9dd;
+    box-shadow: 5px 10px 18px #3b74ad;
+    border-radius: 1rem;
+    height: 35rem;
+    width: 20rem;
+    border: none;
+    margin-top: 1rem; 
+    margin-right: 1rem;
+    
     
     
   }
@@ -105,13 +123,14 @@
     margin-bottom: 36rem;
 
     &__header {
-      margin-top: 0;
-      font-size: 1.5rem;
+      margin-top: .5rem;
+      font-size: 1.2rem;
     }
 
     &__header-two {
       text-align: left;
       font-size: 1rem;
+      margin-top: .5rem;
       
     }
 

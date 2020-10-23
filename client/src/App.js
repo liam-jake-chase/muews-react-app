@@ -115,7 +115,9 @@ getArtistData = () => {
           this.setState({
             discogsInfo: response.data
           })
-          
+          axios
+            .get(`https://api.discogs.com/artists/${artistName}/releases?year`)
+            .then(response => console.log(response.data.releases))     
           
         })
         
@@ -174,6 +176,7 @@ handleSubmit = (event) => {
           artistInfo={this.state.artistInfo}
           discogsInfo={this.state.discogsInfo}
           audioDB={this.state.audioDB}
+          concertInfo={this.state.concertInfo}
           />
           )}/>
           

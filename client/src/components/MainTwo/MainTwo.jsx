@@ -52,17 +52,26 @@ export default class MainTwo extends Component {
 
                                 <img src={this.props.audioDB.strArtistBanner} className="hero__image" alt="Band hero image" />
                                 <div className="hero__wrapper">
-                                <h1 className="hero__bio">BIOGRAPHY:</h1>
-                                <hr />
-                                <div className="hero__bio-text">{this.props.audioDB.strBiographyEN}</div>
-                                </div>                              
+                                    <h1 className="hero__bio">BIOGRAPHY:</h1>
+                                    <hr />
+                                    <div className="hero__bio-text">{this.props.audioDB.strBiographyEN}</div>
+                                </div>
 
 
                             </motion.button>
 
 
-                            
+                            <div className="card__wrapper-three">
                             <motion.button className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                <h2>Concert Listings</h2>
+                                {this.props.concertInfo && this.props.concertInfo.map(concert =>
+                                    <ConcertAPI
+                                        dateTime={concert.datetime}
+                                        onSale={concert.on_sale_datetime}
+                                        venueName={concert.venue.name}
+                                        venueLocation={concert.venue.location}
+                                    />
+                                )}
 
                                 {/* {this.props.newsResults.map(data =>
                                     <NewsSection
@@ -72,14 +81,21 @@ export default class MainTwo extends Component {
                                     />)} */}
 
                             </motion.button>
+                            <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                            
+
+
+                            </motion.div>
+                        </div>
                         </div>
 
-                        <motion.button className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                        
+                            <motion.button className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                 <div className="band">
                                     <h1 className="band__header">BAND DETAILS</h1>
                                     <h2 className="band__header-two">MEMBERS:</h2>
                                     {this.props.discogsInfo.members && this.props.discogsInfo.members.map(member => {
-                                    return <ul className="band__ul"><li className="band__member-name">{member.name}</li></ul>
+                                        return <ul className="band__ul"><li className="band__member-name">{member.name}</li></ul>
                                     })}
                                     <h2 className="band__header-two">YEAR FORMED:</h2>
                                     <ul className="band__ul"><li className="band__member-name">{this.props.audioDB.intFormedYear}</li></ul>
@@ -92,7 +108,9 @@ export default class MainTwo extends Component {
                                     <h2 className="band__header-two">STYLE:</h2>
                                     <ul className="band__ul"><li className="band__member-name">{this.props.audioDB.strStyle}</li></ul>
                                 </div>
-                        </motion.button>
+                            </motion.button>
+                            
+                       
                     </div>
 
 
