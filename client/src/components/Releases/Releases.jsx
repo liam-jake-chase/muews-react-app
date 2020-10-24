@@ -1,23 +1,18 @@
-import React, { Component } from 'react'
-import Carousel from 'react-elastic-carousel'
+import React, { Component } from 'react';
 
-export default class Releases extends Component {
-    state = {
-        items: [
-          {id: 1, title: 'item #1'},
-          {id: 2, title: 'item #2'},
-          {id: 3, title: 'item #3'},
-          {id: 4, title: 'item #4'},
-          {id: 5, title: 'item #5'}
-        ]
-      }
-     
+
+
+
+export default class Releases extends Component { 
+       
       render () {
-        const { items } = this.state;
+        
         return (
-          <Carousel>
-            {items.map(item => <div key={item.id}>{item.title}</div>)}
-          </Carousel>
+            <>
+          <div>{this.props.title}</div>
+          <div>{this.props.year}</div>
+          <img src={this.props.thumb} alt="release" />
+          </>
         )
       }
 }

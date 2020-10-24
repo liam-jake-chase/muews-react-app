@@ -15,6 +15,7 @@
     "react-elastic-carousel": "^0.9.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0",
     "uuidv4": "^6.2.4"
   },
   "proxy": "http://localhost:8080",

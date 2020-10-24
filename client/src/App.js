@@ -19,6 +19,7 @@ export default class App extends Component {
     concertInfo: [],
     discogsInfo: [],
     audioDB: [],
+    releaseData: [],
     selectedVideo: null,
     redirect: false
 }
@@ -102,22 +103,31 @@ getData = () => {
 
 
 getArtistData = () => {
+  const access = {headers: {
+    "Authorization": "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU"
+  }}
   axios
-    .get(`https://api.discogs.com/database/search?q=${this.state.searchName}&artist&token=ZHbyKpYDpUAfgJsaGxIDxBvqnEiCSybfkHQcYFYs`)
+    .get(`https://api.discogs.com/database/search?q=${this.state.searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`)
     .then(response => {
       console.log(response.data.results)
       let artistName = response.data.results[0].id
       let idSearch = () => {
         axios
-        .get(`https://api.discogs.com/artists/${artistName}`)
+        .get(`https://api.discogs.com/artists/${artistName}`, access)
         .then(response => {
           console.log(response.data)
           this.setState({
             discogsInfo: response.data
           })
           axios
-            .get(`https://api.discogs.com/artists/${artistName}/releases?year`)
-            .then(response => console.log(response.data.releases))     
+            .get(`https://api.discogs.com/artists/${artistName}/releases?year&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`)
+            .then(response =>  {
+              console.log(response.data.releases)
+              this.setState({
+                releaseData: response.data.releases
+              })
+              
+            })     
           
         })
         
@@ -177,6 +187,7 @@ handleSubmit = (event) => {
           discogsInfo={this.state.discogsInfo}
           audioDB={this.state.audioDB}
           concertInfo={this.state.concertInfo}
+          releaseData={this.state.releaseData}
           />
           )}/>
           

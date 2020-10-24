@@ -7,6 +7,7 @@ import VideoList from '../VideoPlayer/VideoList';
 import VideoDetail from '../VideoPlayer/VideoDetail';
 import { uuid } from 'uuidv4';
 import './MainTwo.scss';
+import Releases from '../Releases/Releases';
 
 
 
@@ -63,7 +64,7 @@ export default class MainTwo extends Component {
 
                             <div className="card__wrapper-three">
                             <motion.button className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                                <h2>Concert Listings</h2>
+                                {/* <h2>Concert Listings</h2>
                                 {this.props.concertInfo && this.props.concertInfo.map(concert =>
                                     <ConcertAPI
                                         dateTime={concert.datetime}
@@ -71,7 +72,7 @@ export default class MainTwo extends Component {
                                         venueName={concert.venue.name}
                                         venueLocation={concert.venue.location}
                                     />
-                                )}
+                                )} */}
 
                                 {/* {this.props.newsResults.map(data =>
                                     <NewsSection
@@ -79,10 +80,18 @@ export default class MainTwo extends Component {
                                         title={data.title}
                                         url={data.url}
                                     />)} */}
+                                
+                                
 
                             </motion.button>
                             <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                            
+                            {this.props.releaseData.map(release => 
+                                <Releases 
+                                title={release.title}
+                                year={release.year}
+                                thumb={release.thumb}
+                                />
+                                )}
 
 
                             </motion.div>
