@@ -3,10 +3,15 @@
 .video {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     &__item {
        width: 50%;
+        margin-top: .5rem;
+        background-color: #222930;
+        border-radius: 1rem;
+
         
     }
 

@@ -6,7 +6,7 @@ export default Axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
     params: {
         part: 'snippet',
-        maxResults: 6,
+        maxResults: 12,
         key: key,
         type: "video",
         order: "viewCount"

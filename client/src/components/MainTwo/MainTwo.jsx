@@ -8,6 +8,7 @@ import VideoDetail from '../VideoPlayer/VideoDetail';
 import { uuid } from 'uuidv4';
 import './MainTwo.scss';
 import Releases from '../Releases/Releases';
+import Gallery from '../Gallery/Gallery';
 
 
 
@@ -29,6 +30,8 @@ export default class MainTwo extends Component {
             }
         };
 
+        
+       
 
 
         return (
@@ -38,15 +41,17 @@ export default class MainTwo extends Component {
                         name={this.props.artistInfo.name}
                         image={this.props.artistInfo.thumb_url}
                         facebook={this.props.artistInfo.facebook_page_url}
+                        twitter={this.props.audioDB.strTwitter}
+                        homepage={this.props.audioDB.strWebsite}
                     />
                     <div className="card__wrapper">
 
-                        <motion.div className="card__one" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                        <div className="card__one" >
                             <VideoDetail video={this.props.selectedVideo} />
                             <VideoList handleVideoSelect={this.props.handleVideoSelect} videos={this.props.videos} />
 
 
-                        </motion.div>
+                        </div>
 
                         <div className="card__wrapper-two">
                             <motion.button className="card__two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
@@ -63,42 +68,36 @@ export default class MainTwo extends Component {
 
 
                             <div className="card__wrapper-three">
-                            <motion.button className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                                {/* <h2>Concert Listings</h2>
-                                {this.props.concertInfo && this.props.concertInfo.map(concert =>
-                                    <ConcertAPI
-                                        dateTime={concert.datetime}
-                                        onSale={concert.on_sale_datetime}
-                                        venueName={concert.venue.name}
-                                        venueLocation={concert.venue.location}
-                                    />
-                                )} */}
+                                <motion.button className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                    
+                                                                            
+                                        <Gallery
+                                            imageOne={this.props.audioDB.strArtistClearart}
+                                            imageTwo={this.props.audioDB.strArtistFanart}
+                                            imageThree={this.props.audioDB.strArtistFanart2}
+                                            imageFour={this.props.audioDB.strArtistFanart3}
+                                            imageFive={this.props.audioDB.strArtistLogo}
+                                        />
 
-                                {/* {this.props.newsResults.map(data =>
-                                    <NewsSection
-                                        key={uuid()}
-                                        title={data.title}
-                                        url={data.url}
-                                    />)} */}
-                                
-                                
+                                   
 
-                            </motion.button>
-                            <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                            {this.props.releaseData.map(release => 
-                                <Releases 
-                                title={release.title}
-                                year={release.year}
-                                thumb={release.thumb}
-                                />
-                                )}
+                                </motion.button>
+                                <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                    <h2 className="releases__header">RELEASES</h2>
+                                    {this.props.releaseData.map(release =>
+                                        <Releases
+                                            title={release.title}
+                                            year={release.year}
+                                            thumb={release.thumb}
+                                        />
+                                    )}
 
 
-                            </motion.div>
+                                </motion.div>
+                               
+                            </div>
                         </div>
-                        </div>
-
-                        
+                        <div className="card__wrapper-four">
                             <motion.button className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                 <div className="band">
                                     <h1 className="band__header">BAND DETAILS</h1>
@@ -118,10 +117,23 @@ export default class MainTwo extends Component {
                                     <ul className="band__ul"><li className="band__member-name">{this.props.audioDB.strStyle}</li></ul>
                                 </div>
                             </motion.button>
-                            
-                       
-                    </div>
 
+                            <motion.button className="card__six" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                            <h2>CONCERT LISTINGS</h2>
+                            {this.props.concertInfo && this.props.concertInfo.map(concert =>
+                                        <ConcertAPI
+                                            dateTime={concert.datetime}
+                                            onSale={concert.on_sale_datetime}
+                                            venueName={concert.venue.name}
+                                            venueLocation={concert.venue.location}
+                                        />
+                                    )}    
+                            </motion.button>
+
+                        </div>
+
+
+                    </div>
 
                 </div>
             </motion.div>

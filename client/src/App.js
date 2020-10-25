@@ -20,6 +20,7 @@ export default class App extends Component {
     discogsInfo: [],
     audioDB: [],
     releaseData: [],
+    images: [],
     selectedVideo: null,
     redirect: false
 }
@@ -30,29 +31,30 @@ handleSearchName = (event) => {
     })
 }
 
-getNews = () => {
-      axios
-          .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=5&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
-          .then(response => {
-              console.log(response.data.articles)
-              this.setState({
-                  newsResults: response.data.articles
-              })
-          })
+// getNews = () => {
+//       axios
+//           .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=5&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
+//           .then(response => {
+//               console.log(response.data.articles)
+//               this.setState({
+//                   newsResults: response.data.articles
+//               })
+//           })
           
           
-  }
-// getVideo = async () => {
-//       const response = await Youtube.get('/search', {
-//           params: {
-//               q: this.state.searchName
-//           }
-//       })
-//       console.log(response)
-//       this.setState({
-//         videos: response.data.items
-//     })
-// }
+//   }
+
+getVideo = async () => {
+      const response = await Youtube.get('/search', {
+          params: {
+              q: this.state.searchName
+          }
+      })
+      console.log(response)
+      this.setState({
+        videos: response.data.items
+    })
+}
 
 getArtist = () =>{
   axios
@@ -117,7 +119,8 @@ getArtistData = () => {
         .then(response => {
           console.log(response.data)
           this.setState({
-            discogsInfo: response.data
+            discogsInfo: response.data,
+            images: response.data.images
           })
           axios
             .get(`https://api.discogs.com/artists/${artistName}/releases?year&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`)
@@ -147,8 +150,8 @@ getArtistData = () => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  this.getNews();
-  // this.getVideo();
+  // this.getNews();
+  this.getVideo();
   this.getArtist();
   this.getEvent();
   this.getArtistData();
@@ -188,6 +191,7 @@ handleSubmit = (event) => {
           audioDB={this.state.audioDB}
           concertInfo={this.state.concertInfo}
           releaseData={this.state.releaseData}
+          images={this.state.images}
           />
           )}/>
           

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Main.scss'
-import animatedLogo from '../../assets/Logo-movie-wide.mp4';
+import animatedLogo from '../../assets/Logo-movie-wide-two.mp4';
 import { Redirect } from 'react-router-dom'
 import { motion } from 'framer-motion';
 
