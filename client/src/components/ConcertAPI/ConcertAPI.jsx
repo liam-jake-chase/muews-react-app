@@ -16,7 +16,7 @@ export default class ConcertAPI extends Component {
                 <p className="concert__text-style">{this.props.venueName}</p>
                 <h4>VENUE LOCATION</h4>
                 <p className="concert__text-style">{this.props.venueLocation}</p>
-                <button className="concert__button">Purchase Tickets</button>
+                <a href={this.props.ticketLink} target="_blank"><button className="concert__button">Purchase Tickets</button></a>
             </div>
         )
     }

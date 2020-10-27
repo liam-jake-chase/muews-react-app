@@ -5,8 +5,8 @@ import axios from 'axios';
 import Youtube from './components/VideoPlayer/Youtube'
 import './App.css';
 import React, { Component } from 'react'
-import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion'
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion'
 
 
 export default class App extends Component {
@@ -37,7 +37,7 @@ getVideo = async () => {
               q: this.state.searchName
           }
       })
-      console.log(response)
+      
       this.setState({
         videos: response.data.items
     })
@@ -47,7 +47,7 @@ getArtist = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
     .then(response => {
-      console.log(response.data)
+      
       this.setState({
         artistInfo: response.data
       })
@@ -81,8 +81,7 @@ getData = () => {
 
   axios 
     .request(options)
-    .then(response => {
-      console.log(response.data.artists[0])
+    .then(response => {      
       this.setState({
         audioDB: response.data.artists[0]
       })
@@ -98,22 +97,19 @@ getArtistData = () => {
   axios
     .get(`https://api.discogs.com/database/search?q=${this.state.searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`)
     .then(response => {
-      console.log(response.data.results)
       let artistName = response.data.results[0].id
       let idSearch = () => {
         axios
         .get(`https://api.discogs.com/artists/${artistName}`, access)
         .then(response => {
-          console.log(response.data)
-          this.setState({
+            this.setState({
             discogsInfo: response.data,
             images: response.data.images
           })
           axios
             .get(`https://api.discogs.com/artists/${artistName}/releases?year&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`)
             .then(response =>  {
-              console.log(response.data.releases)
-              this.setState({
+                this.setState({
                 releaseData: response.data.releases
               })
               
@@ -146,8 +142,12 @@ handleSubmit = (event) => {
     redirect: true
   })
   
-  
-      
+}
+
+handleSubmitTwo = () => {
+    this.setState({
+    redirect: false
+  })
 }
   
   render() {
@@ -167,8 +167,7 @@ handleSubmit = (event) => {
             />
           )}/>
           <Route path="/MainTwo" render={(props) => ( <MainTwo {...props}
-          newsResults={this.state.newsResults}
-          handleVideoSelect={this.state.handleVideoSelect}
+          newsResults={this.state.newsResults}          
           selectedVideo={this.state.selectedVideo}
           videos={this.state.videos}
           handleVideoSelect={this.handleVideoSelect}
@@ -178,6 +177,7 @@ handleSubmit = (event) => {
           concertInfo={this.state.concertInfo}
           releaseData={this.state.releaseData}
           images={this.state.images}
+          handleSubmitTwo={this.handleSubmitTwo}
           />
           )}/>
           

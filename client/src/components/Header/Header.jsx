@@ -16,7 +16,7 @@ export default class Header extends Component {
         return (
             <>
                 <div className="header">
-                    <Link to="/">
+                    <Link to="/" onClick={this.props.handleSubmitTwo}>
                         <img src={searchButton} className="header__search" alt="searchbutton logo" />
                         <img src={Logo} className="header__logo" alt="Muews Logo" />
                     </Link>

@@ -15,8 +15,6 @@ import Gallery from '../Gallery/Gallery';
 
 export default class MainTwo extends Component {
 
-
-
     render() {
         const pageTransition = {
             in: {
@@ -25,14 +23,8 @@ export default class MainTwo extends Component {
             },
             out: {
                 opacity: 0,
-
-
             }
         };
-
-        
-       
-
 
         return (
             <motion.div initial="out" animate="in" exit="out" variants={pageTransition} transition={{ ease: "easeOut", duration: 2 }}>
@@ -43,6 +35,7 @@ export default class MainTwo extends Component {
                         facebook={this.props.artistInfo.facebook_page_url}
                         twitter={this.props.audioDB.strTwitter}
                         homepage={this.props.audioDB.strWebsite}
+                        handleSubmitTwo={this.props.handleSubmitTwo}
                     />
                     <div className="card__wrapper">
 
@@ -126,6 +119,7 @@ export default class MainTwo extends Component {
                                             onSale={concert.on_sale_datetime}
                                             venueName={concert.venue.name}
                                             venueLocation={concert.venue.location}
+                                            ticketLink={concert.url}
                                         />
                                     )}    
                             </motion.button>
