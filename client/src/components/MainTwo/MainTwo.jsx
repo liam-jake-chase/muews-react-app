@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import NewsSection from '../NewsAPI/NewsSection';
 import ConcertAPI from '../ConcertAPI/ConcertAPI';
 import Header from '../Header/Header';
 import { motion } from 'framer-motion';
 import VideoList from '../VideoPlayer/VideoList';
 import VideoDetail from '../VideoPlayer/VideoDetail';
-import { uuid } from 'uuidv4';
 import './MainTwo.scss';
 import Releases from '../Releases/Releases';
 import Gallery from '../Gallery/Gallery';
+
 
 
 
@@ -32,10 +31,11 @@ export default class MainTwo extends Component {
                     <Header
                         name={this.props.artistInfo.name}
                         image={this.props.artistInfo.thumb_url}
-                        facebook={this.props.artistInfo.facebook_page_url}
+                        facebook={this.props.audioDB.strFacebook}
                         twitter={this.props.audioDB.strTwitter}
                         homepage={this.props.audioDB.strWebsite}
                         handleSubmitTwo={this.props.handleSubmitTwo}
+                        value={this.props.value} 
                     />
                     <div className="card__wrapper">
 
@@ -49,7 +49,7 @@ export default class MainTwo extends Component {
                         <div className="card__wrapper-two">
                             <motion.button className="card__two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
 
-                                <img src={this.props.audioDB.strArtistBanner} className="hero__image" alt="Band hero image" />
+                                <img src={this.props.audioDB.strArtistBanner} className="hero__image" alt="Band hero" />
                                 <div className="hero__wrapper">
                                     <h1 className="hero__bio">BIOGRAPHY:</h1>
                                     <hr />
@@ -79,6 +79,7 @@ export default class MainTwo extends Component {
                                     <h2 className="releases__header">RELEASES</h2>
                                     {this.props.releaseData.map(release =>
                                         <Releases
+                                            
                                             title={release.title}
                                             year={release.year}
                                             thumb={release.thumb}
@@ -120,6 +121,7 @@ export default class MainTwo extends Component {
                                             venueName={concert.venue.name}
                                             venueLocation={concert.venue.location}
                                             ticketLink={concert.url}
+                                            noData={this.props.noData}
                                         />
                                     )}    
                             </motion.button>

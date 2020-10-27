@@ -21,7 +21,8 @@ export default class App extends Component {
     releaseData: [],
     images: [],
     selectedVideo: null,
-    redirect: false
+    redirect: false,
+    noData: ''
 }
 
 handleSearchName = (event) => {
@@ -60,10 +61,17 @@ getEvent = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
     .then(response => {
-      console.log(response.data)
-      this.setState({
-        concertInfo: response.data
-      })
+      if(response.data.length === 0) {
+        this.setState({
+          noData: "No Event Listings"
+        }) 
+      } else {
+        this.setState({
+          concertInfo: response.data
+        })
+        
+      }
+
     })
 }
 
@@ -178,6 +186,8 @@ handleSubmitTwo = () => {
           releaseData={this.state.releaseData}
           images={this.state.images}
           handleSubmitTwo={this.handleSubmitTwo}
+          value={this.state.searchName} 
+          noData={this.state.noData}
           />
           )}/>
           

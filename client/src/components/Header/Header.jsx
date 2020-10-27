@@ -11,8 +11,10 @@ import searchButton from '../../assets/Search.svg';
 export default class Header extends Component {
     render() {
 
+        const facebookLink = "https://" + this.props.facebook;
         const twitterLink = "https://" + this.props.twitter;
         const homepageLink = "https://" + this.props.homepage;
+        const instagramLink = "https://www.instagram.com/" + this.props.value ;
         return (
             <>
                 <div className="header">
@@ -22,20 +24,20 @@ export default class Header extends Component {
                     </Link>
 
                     <div className="header__middle">
-                        <a href={this.props.facebook} target="_blank">
+                        <a href={facebookLink} target="_blank" rel="noopener noreferrer">
                             <img src={facebook} className="header__facebook" alt="Facebook logo" /></a>
 
-                        <a href={twitterLink} target="_blank">
+                        <a href={twitterLink} target="_blank" rel="noopener noreferrer">
                             <img src={twitter} className="header__facebook" alt="Twitter logo" /></a>
 
-                        <a href={this.props.instagram} target="_blank">
+                        <a href={instagramLink} target="_blank" rel="noopener noreferrer">
                             <img src={instagram} className="header__facebook" alt="Instagram logo" /></a>
 
 
                     </div>
                     <div className="header__right">
-                        <a href={homepageLink} target="_blank">
-                            <img src={this.props.image} className="header__band-image" /></a>
+                        <a href={homepageLink} target="_blank" rel="noopener noreferrer">
+                            <img src={this.props.image} className="header__band-image" alt="header"/></a>
                         <div className="header__band">{this.props.name}</div>
                     </div>
                 </div>

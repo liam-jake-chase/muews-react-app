@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import './Gallery.scss'
 
@@ -16,12 +16,11 @@ export default class Gallery extends Component {
           >
             <Slider>
               
-              <Slide index={0}><img className="slides" src={this.props.imageTwo} /></Slide>
-              <Slide index={1}><img className="slides" src={this.props.imageThree} /></Slide>
-              <Slide index={2}><img className="slides" src={this.props.imageFour} /></Slide>
+              <Slide index={0}><img className="slides" src={this.props.imageTwo} alt="slide" /></Slide>
+              <Slide index={1}><img className="slides" src={this.props.imageThree} alt="slide" /></Slide>
+              <Slide index={2}><img className="slides" src={this.props.imageFour} alt="slide" /></Slide>
             </Slider>
-            {/* <ButtonBack>Back</ButtonBack>
-            <ButtonNext>Next</ButtonNext> */}
+     
           </CarouselProvider>
 
             
