@@ -1,4 +1,3 @@
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import Footer from './components/Footer/Footer'
 import Main from './components/Main/Main'
 import MainTwo from './components/MainTwo/MainTwo'
@@ -31,18 +30,6 @@ handleSearchName = (event) => {
     })
 }
 
-// getNews = () => {
-//       axios
-//           .get(`https://newsapi.org/v2/everything?q=${this.state.searchName}&from=2020&pageSize=5&language=en&sortBy=relevancy&apiKey=0c5f7ab300a446dd9642ea289e6b7522`)
-//           .then(response => {
-//               console.log(response.data.articles)
-//               this.setState({
-//                   newsResults: response.data.articles
-//               })
-//           })
-          
-          
-//   }
 
 getVideo = async () => {
       const response = await Youtube.get('/search', {
@@ -150,7 +137,6 @@ getArtistData = () => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  // this.getNews();
   this.getVideo();
   this.getArtist();
   this.getEvent();

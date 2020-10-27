@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import './ConcertAPI.scss'
+import dateFormat from 'dateformat';
+import './ConcertAPI.scss';
+
 
 export default class ConcertAPI extends Component {
     render() {
+
+        let newDate = dateFormat(this.props.dateTime, 'mmmm dS, yyyy, h:MM:ss TT')
+
         return (
             <div className ="concert__listings">  
-                <h4>Date & Time</h4>              
-               <p>{this.props.dateTime}</p>                
-                <h4>Venue Name</h4>
-                <p>{this.props.venueName}</p>
-                <h4>Venue Location</h4>
-                <p>{this.props.venueLocation}</p>
+                <h4>DATE & TIME</h4>              
+               <p className="concert__text-style">{newDate}</p>                
+                <h4>VENUE NAME</h4>
+                <p className="concert__text-style">{this.props.venueName}</p>
+                <h4>VENUE LOCATION</h4>
+                <p className="concert__text-style">{this.props.venueLocation}</p>
+                <button className="concert__button">Purchase Tickets</button>
             </div>
         )
     }
