@@ -13,7 +13,7 @@ export default class ConcertAPI extends Component {
             <div className ="concert__listings">  
             
                 <h4>DATE & TIME</h4>              
-               <p className="concert__text-style">{newDate}</p>                
+               <p className="concert__text-style">{newDate}</p>               
                 <h4>VENUE NAME</h4>
                 <p className="concert__text-style">{this.props.venueName}</p>
                 <h4>VENUE LOCATION</h4>

@@ -61,7 +61,7 @@ getEvent = () =>{
   axios
     .get(`https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`)
     .then(response => {
-      if(response.data.length === 0) {
+      if(!response.data.length) {
         this.setState({
           noData: "No Event Listings"
         }) 
