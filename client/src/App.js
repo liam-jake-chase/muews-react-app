@@ -6,7 +6,8 @@ import Youtube from './components/VideoPlayer/Youtube'
 import './App.css';
 import React, { Component } from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion';
+import Signup from './components/SignupLogin/Signup';
 
 
 export default class App extends Component {
@@ -24,6 +25,8 @@ export default class App extends Component {
     redirect: false,
     noData: ''
 }
+
+
 
 handleSearchName = (event) => {
     this.setState({
@@ -167,7 +170,7 @@ handleSubmitTwo = () => {
         <BrowserRouter> 
         <AnimatePresence exitBeforeEnter>          
         <Switch>          
-          <Route exact path="/" render={(props) => ( <Main {...props}   
+          <Route exact path="/" render={(props) => ( <Signup {...props}   
               value={this.state.searchName} 
               onChange={this.handleSearchName}
               handleSubmit={this.handleSubmit}

@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Signup from './components/SignupLogin/Signup';
+import { Container } from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { AuthProvider } from './Context/AuthContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+    <Container
+      className="d-flex align-items-center justify-content-center">
+     <Signup />
+    
+    </Container>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

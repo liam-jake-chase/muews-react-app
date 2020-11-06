@@ -5,6 +5,7 @@
 **/client/path_to_profile
 /.pnp
 .pnp.js
+.history/
 
 # testing
 /coverage
