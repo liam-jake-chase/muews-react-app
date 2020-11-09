@@ -7,17 +7,33 @@ import Signup from './components/SignupLogin/Signup';
 import { Container } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { AuthProvider } from './Context/AuthContext';
-
+import Dashboard from './components/SignupLogin/Dashboard'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Login from './components/SignupLogin/Login'
+import PrivateRoute from './components/SignupLogin/PrivateRoute'
+import ForgotPassword from './components/SignupLogin/ForgotPassword'
+import UpdateProfile from './components/SignupLogin/UpdateProfile'
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
+
     <Container
-      className="d-flex align-items-center justify-content-center">
-     <Signup />
-    
+      className="d-flex-col align-items-center justify-content-center">
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <PrivateRoute exact path="/" component={Dashboard}/>
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/login' component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+      
+
     </Container>
-    </AuthProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
