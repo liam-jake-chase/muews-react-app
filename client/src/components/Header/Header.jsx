@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import facebook from '../../assets/Icon-facebook.svg';
 import twitter from '../../assets/Icon-twitter.svg';
 import instagram from '../../assets/Icon-instagram.svg';
-import searchButton from '../../assets/Search.svg';
+
 
 
 export default class Header extends Component {
@@ -18,10 +18,7 @@ export default class Header extends Component {
         return (
             <>
                 <div className="header">
-                    <Link to="/" onClick={this.props.handleSubmitTwo}>
-                        <img src={searchButton} className="header__search" alt="searchbutton logo" />
-                        <img src={Logo} className="header__logo" alt="Muews Logo" />
-                    </Link>
+                  
 
                     <div className="header__middle">
                         <a href={facebookLink} target="_blank" rel="noopener noreferrer">

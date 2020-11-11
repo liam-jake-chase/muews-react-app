@@ -3,6 +3,7 @@ import './Main.scss'
 import animatedLogo from '../../assets/Logo-movie-wide-two.mp4';
 import { Redirect } from 'react-router-dom'
 import { motion } from 'framer-motion';
+import NavbarMenu from '../SideBar/NavbarMenu';
 
 
 const pageTransition = {
@@ -25,6 +26,7 @@ export default class Main extends Component {
         }
         return (
             <>
+           
             <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
                 
             <div className="main">

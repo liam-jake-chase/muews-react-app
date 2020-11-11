@@ -8,6 +8,13 @@ import React, { Component } from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Signup from './components/SignupLogin/Signup';
+import NavbarMenu from './components/SideBar/NavbarMenu';
+import Login from './components/SignupLogin/Login'
+import PrivateRoute from './components/SignupLogin/PrivateRoute'
+import ForgotPassword from './components/SignupLogin/ForgotPassword'
+import UpdateProfile from './components/SignupLogin/UpdateProfile'
+import Dashboard from './components/SignupLogin/Dashboard'
+import { AuthProvider } from './Context/AuthContext';
 
 
 export default class App extends Component {
@@ -169,8 +176,11 @@ handleSubmitTwo = () => {
       <div className="App">        
         <BrowserRouter> 
         <AnimatePresence exitBeforeEnter>          
-        <Switch>          
-          <Route exact path="/" render={(props) => ( <Signup {...props}   
+          <NavbarMenu 
+          handleSubmitTwo={this.handleSubmitTwo}
+          />          
+        <Switch>
+          <Route exact path="/" render={(props) => ( <Main {...props}   
               value={this.state.searchName} 
               onChange={this.handleSearchName}
               handleSubmit={this.handleSubmit}
@@ -193,7 +203,13 @@ handleSubmitTwo = () => {
           noData={this.state.noData}
           />
           )}/>
-          
+          <AuthProvider>
+          <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+          <PrivateRoute path="/update-profile" component={UpdateProfile} />
+          <Route path='/signup' component={Signup} />
+          <Route path='/login' component={Login} />
+          <Route path="/forgot-password" component={ForgotPassword} /> 
+          </AuthProvider>
         </Switch>
         </AnimatePresence>   
          </BrowserRouter>          
