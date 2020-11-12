@@ -3,7 +3,7 @@ import './Main.scss'
 import animatedLogo from '../../assets/Logo-movie-wide-two.mp4';
 import { Redirect } from 'react-router-dom'
 import { motion } from 'framer-motion';
-import NavbarMenu from '../SideBar/NavbarMenu';
+import FooterTwo from '../Footer/FooterTwo'
 
 
 const pageTransition = {
@@ -41,6 +41,9 @@ export default class Main extends Component {
                 </form>
             </div>
             </motion.div>
+          <div className="footer__main">
+        <FooterTwo />
+        </div>   
             </>
         )
     }

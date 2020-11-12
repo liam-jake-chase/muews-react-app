@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Form, Alert } from "react-bootstrap"
 import { useAuth } from '../../Context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import './SignupLogin.scss'
+import FooterTwo from '../Footer/FooterTwo';
+import Header from '../Header/Header'
+
 
 
 
@@ -38,31 +41,39 @@ export default function Login() {
 
   return (
     <>
-
-      <h2 className="text-center mb-4">Log In</h2>
+      <Header />
+      <h2 className="header-login">LOG IN</h2>
       {error && <Alert variant="danger">{error}</Alert>}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group id="email">
-          <Form.Label>Email</Form.Label>
-          <div className="email-style">
-            <Form.Control type="email" ref={emailRef} required /></div>
-        </Form.Group>
-        <Form.Group id="password">
-          <Form.Label>Password</Form.Label>
-          <div className="email-style">
-            <Form.Control type="password" ref={passwordRef} required /></div>
-        </Form.Group>
-        <button disabled={loading} className="btn-login" type="submit">
-          Log In
+      <div className="profile__card-two">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group id="email">
+          <div className="label-header">
+           
+              <Form.Label className="label-header">EMAIL</Form.Label></div>
+
+            <div className="email-style">
+              <Form.Control type="email" ref={emailRef} required className="form-style" /></div>
+          </Form.Group>
+          <Form.Group id="password">
+            <Form.Label>PASSWORD</Form.Label>
+            <div className="email-style">
+              <Form.Control type="password" ref={passwordRef} required className="form-style" /></div>
+          </Form.Group>
+          <button disabled={loading} className="btn-login" type="submit">
+            Log In
             </button>
-      </Form>
-      <div className="w-30 text-center mt-3">
-        <Link to="/forgot-password" className="forgot">Forgot Password?</Link>
+        </Form>
+        <div className="w-30 text-center mt-3">
+          <Link to="/forgot-password" className="forgot-pass">Forgot Password?</Link>
+        </div>
+
+
+        <div className="forgot__need">
+          Need an account?</div> <Link to="/signup" className="forgot-pass">Sign Up</Link>
+        
       </div>
-
-
-      <div className="w-30 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="footer__main">
+        <FooterTwo />
       </div>
     </>
   )

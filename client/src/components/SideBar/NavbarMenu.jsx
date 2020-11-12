@@ -5,19 +5,36 @@ import * as AiIcons from 'react-icons/ai'
 import { SidebarData } from '../SideBar/SideBarData'
 import { IconContext } from 'react-icons';
 import './Navbar.scss'
+import { useAuth } from '../../Context/AuthContext'
+import logo from '../../assets/Logo-transparent.svg'
+import LoggedUser from '../SignupLogin/LoggedUser'
 
 function NavbarMenu(props) {
 const [sidebar, setSidebar] = useState(false)
 
 const showSidebar = () => setSidebar(!sidebar)
+const { currentUser } = useAuth()
+
+
+if(currentUser === null) {
+  let loginLink = <Link to="/login" className="current-nav-user">Log In</Link>
+  let searchLink = <Link to="/" className="current-nav-user-two">Search</Link>
+  return [loginLink, searchLink]
+  
+}
+
+  
+
 
     return (
       <>
+     
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
@@ -39,6 +56,8 @@ const showSidebar = () => setSidebar(!sidebar)
           </ul>
         </nav>
       </IconContext.Provider>
+            <img src={logo} alt='transparent' className="logo-transparent"/>
+            <div className="header__band"><LoggedUser /></div>
     </>
     )
 }

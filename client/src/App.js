@@ -17,6 +17,8 @@ import Dashboard from './components/SignupLogin/Dashboard'
 import { AuthProvider } from './Context/AuthContext';
 
 
+
+
 export default class App extends Component {
   state = {
     searchName: '',
@@ -151,7 +153,7 @@ getArtistData = () => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  this.getVideo();
+  // this.getVideo();
   this.getArtist();
   this.getEvent();
   this.getArtistData();
@@ -168,17 +170,20 @@ handleSubmitTwo = () => {
   })
 }
   
-  render() {
-   
+  render() { 
+    
     
 
     return (
       <div className="App">        
         <BrowserRouter> 
-        <AnimatePresence exitBeforeEnter>          
+        <AnimatePresence exitBeforeEnter> 
+        <AuthProvider>       
           <NavbarMenu 
           handleSubmitTwo={this.handleSubmitTwo}
-          />          
+          name={this.state.artistInfo.name}
+          />    
+          </AuthProvider>        
         <Switch>
           <Route exact path="/" render={(props) => ( <Main {...props}   
               value={this.state.searchName} 
@@ -213,9 +218,7 @@ handleSubmitTwo = () => {
         </Switch>
         </AnimatePresence>   
          </BrowserRouter>          
-       <div className="footer__main">
-        <Footer />
-        </div>     
+         
      
      </div>
     )

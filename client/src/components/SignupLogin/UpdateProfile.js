@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert}  from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from '../../Context/AuthContext'
+import Footer from "../Footer/Footer"
 
 
 export default function Signup() {
@@ -83,8 +84,11 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/dashboard">Cancel</Link>
       </div>
+      <div className="footer__main">
+        <Footer />
+        </div>   
     </>
   )
 }

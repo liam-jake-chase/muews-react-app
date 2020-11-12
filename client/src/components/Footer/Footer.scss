@@ -1,15 +1,57 @@
 
 
 .footer {
+    display: flex;
+    justify-content: space-between;
     height: 8rem;
     width: 100%;
     background-color: #222930;
     margin-top: 1rem;
 
     &__tagline {
-        z-index: 9999;
-        margin-top: 1.5rem;
+        z-index: 9999;    
+       
+        position: absolute;
+        width: 50%;
+        left: 32rem;
+        margin-top: 1rem;
+      
     }
+
+    &__left{
+        display: flex;
+        justify-content: space-between;
+        width: 15%;
+        margin-left: 4rem;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+    }
+
+    &__facebook {
+        width: 3.5rem;
+        height: 3.5rem; 
+        border-radius: 20%;
+        border: 2px solid #304050;
+        margin-top: 2.5rem;
+        margin-right: 4rem;
+        margin-left: 4rem;
+    }
+
+    &__band {
+        width: 4rem;
+        height: 3.75rem; 
+        border-radius: 20%;
+        
+        margin-top: 2.5rem;
+        margin-right: 1rem;
+        margin-left: 4rem;
+    }
+
+    
 
     
 }

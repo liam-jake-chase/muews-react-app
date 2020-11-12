@@ -5,38 +5,22 @@ import * as IoIcons from 'react-icons/io'
 
 
 
-export const SidebarData = [
+
+export const SidebarData = [    
     {
         title: 'Search',
         path: '/',
         icon: <SiIcons.SiElasticsearch />,
         cName: 'nav-text',
         
-    },
-    {
-        title: 'Login',
-        path: '/login',
-        icon: <IoIcons.IoIosLogIn />,
-        cName: 'nav-text'
-    },
+    },   
     {
         title: 'Dashboard',
         path: '/dashboard',
         icon: <IoIcons.IoIosHome />,
         cName: 'nav-text'
     },
-    {
-        title: 'Favorites',
-        path: '/favorites',
-        icon: <IoIcons.IoIosLogIn />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'History',
-        path: '/history',
-        icon: <IoIcons.IoIosLogIn />,
-        cName: 'nav-text'
-    },
+    
    
 ]
  

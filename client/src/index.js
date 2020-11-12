@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import Signup from './components/SignupLogin/Signup';
 // import { Container } from "react-bootstrap"
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 // import { AuthProvider } from './Context/AuthContext';
 // import Dashboard from './components/SignupLogin/Dashboard'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
