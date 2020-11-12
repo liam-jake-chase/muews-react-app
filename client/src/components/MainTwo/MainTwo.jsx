@@ -49,7 +49,7 @@ export default class MainTwo extends Component {
                         </div>
 
                         <div className="card__wrapper-two">
-                            <motion.button className="card__two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                            <motion.div className="card__two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
 
                                 <img src={this.props.audioDB.strArtistBanner} className="hero__image" alt="Band hero" />
                                 <div className="hero__wrapper">
@@ -59,11 +59,11 @@ export default class MainTwo extends Component {
                                 </div>
 
 
-                            </motion.button>
+                            </motion.div>
 
 
                             <div className="card__wrapper-three">
-                                <motion.button className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                <motion.div className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                     
                                                                             
                                         <Gallery
@@ -76,7 +76,7 @@ export default class MainTwo extends Component {
 
                                    
 
-                                </motion.button>
+                                </motion.div>
                                 <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                     <h2 className="releases__header">RELEASES</h2>
                                     {this.props.releaseData.map(release =>
@@ -94,7 +94,7 @@ export default class MainTwo extends Component {
                             </div>
                         </div>
                         <div className="card__wrapper-four">
-                            <motion.button className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                            <motion.div className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                 <div className="band">
                                     <h1 className="band__header">BAND DETAILS</h1>
                                     <h2 className="band__header-two">MEMBERS:</h2>
@@ -112,9 +112,9 @@ export default class MainTwo extends Component {
                                     <h2 className="band__header-two">STYLE:</h2>
                                     <ul className="band__ul"><li className="band__member-name">{this.props.audioDB.strStyle}</li></ul>
                                 </div>
-                            </motion.button>
+                            </motion.div>
 
-                            <motion.button className="card__six" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                            <motion.div className="card__six" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                             <h2>CONCERT LISTINGS</h2>
                             {this.props.concertInfo && this.props.concertInfo.map(concert =>
                                         <ConcertAPI
@@ -126,7 +126,7 @@ export default class MainTwo extends Component {
                                             noData={this.props.noData}
                                         />
                                     )}    
-                            </motion.button>
+                            </motion.div>
 
                         </div>
 

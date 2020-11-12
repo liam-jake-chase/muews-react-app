@@ -2,7 +2,10 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert}  from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from '../../Context/AuthContext'
-import Footer from "../Footer/Footer"
+import FooterTwo from "../Footer/FooterTwo"
+import './SignupLogin.scss';
+import { motion } from 'framer-motion';
+import Header from "../Header/Header";
 
 
 export default function Signup() {
@@ -44,7 +47,7 @@ export default function Signup() {
     try {
       setError('')
       setLoading(true)
-    //   await signup(emailRef.current.value, passwordRef.current.value)
+    
       history.push('/')
 
     } catch {
@@ -60,34 +63,35 @@ export default function Signup() {
  
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Update Profile</h2> 
+      
+          <h2 className="header-login">UPDATE PROFILE</h2> 
+          <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >
             {error && <Alert variant="danger">{error}</Alert>}         
           <Form onSubmit={handleSubmit}> 
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.email} />
+              <div className="label-header">
+              <Form.Label>Email</Form.Label></div>
+              <Form.Control type="email" ref={emailRef} className="email-style-two" required defaultValue={currentUser.email} />
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required placeholder="Leave blank to keep the same"/>
+              <Form.Control type="password" ref={passwordRef} className="email-style-two" required placeholder="Leave blank to keep the same"/>
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required placeholder="Leave blank to keep the same"/>
+              <Form.Control type="password" ref={passwordConfirmRef} className="email-style-two" required placeholder="Leave blank to keep the same"/>
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="btn-login" type="submit">
               Update
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
+        
       <div className="w-100 text-center mt-2">
-        <Link to="/dashboard">Cancel</Link>
+        <Link to="/dashboard" className="forgot-pass">Cancel</Link>
       </div>
+      </motion.div>
       <div className="footer__main">
-        <Footer />
+        <FooterTwo />
         </div>   
     </>
   )

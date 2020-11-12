@@ -1,12 +1,15 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert}  from "react-bootstrap"
+import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from '../../Context/AuthContext'
 import FooterTwo from '../Footer/FooterTwo';
+import './SignupLogin.scss';
+import { motion } from 'framer-motion';
+import Header from "../Header/Header";
 
 
 export default function Signup() {
-  
+
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
@@ -15,9 +18,9 @@ export default function Signup() {
   const [loading, setLoading] = useState(false)
   const history = useHistory()
 
-  async function handleSubmit (e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    
+
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError('Passwords do not match!')
@@ -36,38 +39,41 @@ export default function Signup() {
     setLoading(false)
 
   }
-  
- 
 
- 
+
+
+
   return (
     <>
-      <Card className="card-style">
-        <Card.Body className="card-style">
-          <h2 className="text-center mb-4">Sign Up</h2> 
+     <Header />
+          <h2 className="header-login">Sign Up</h2> 
+          <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >
             {error && <Alert variant="danger">{error}</Alert>}         
           <Form onSubmit={handleSubmit}> 
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+            <div className="label-header">
+              <Form.Label>Email</Form.Label></div>
+              <Form.Control type="email" ref={emailRef} required className="form-style"/>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+            <div className="label-header-two">
+              <Form.Label>Password</Form.Label></div>
+              <Form.Control type="password" ref={passwordRef} required  className="form-style"/>
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
+            <div className="label-header-two">
+              <Form.Label>Password Confirmation</Form.Label></div>
+              <Form.Control type="password" ref={passwordConfirmRef} required className="form-style"/>
             </Form.Group>
-            <button disabled={loading} className="btn-login" type="submit">
-              Sign Up
+            <button disabled={loading} className="btn-login-two" type="submit">
+          Sign Up
             </button>
           </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
+      
+      <div className="forgot__need-three">
+        Already have an account? </div><Link to="/login" className="forgot-pass-two">Log In</Link>
+      
+      </motion.div>
       <div className="footer__main">
         <FooterTwo />
         </div>   

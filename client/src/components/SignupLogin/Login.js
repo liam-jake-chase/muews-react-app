@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom'
 import './SignupLogin.scss'
 import FooterTwo from '../Footer/FooterTwo';
 import Header from '../Header/Header'
+import { motion } from 'framer-motion';
 
 
 
@@ -44,11 +45,11 @@ export default function Login() {
       <Header />
       <h2 className="header-login">LOG IN</h2>
       {error && <Alert variant="danger">{error}</Alert>}
-      <div className="profile__card-two">
+      <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >
         <Form onSubmit={handleSubmit}>
           <Form.Group id="email">
-          <div className="label-header">
-           
+            <div className="label-header">
+
               <Form.Label className="label-header">EMAIL</Form.Label></div>
 
             <div className="email-style">
@@ -63,15 +64,15 @@ export default function Login() {
             Log In
             </button>
         </Form>
-        <div className="w-30 text-center mt-3">
-          <Link to="/forgot-password" className="forgot-pass">Forgot Password?</Link>
-        </div>
+          <div className="w-30 text-center mt-3">
+           <Link to="/forgot-password" className="forgot-pass">Forgot Password?</Link>
+          </div>
 
 
         <div className="forgot__need">
           Need an account?</div> <Link to="/signup" className="forgot-pass">Sign Up</Link>
-        
-      </div>
+
+      </motion.div>
       <div className="footer__main">
         <FooterTwo />
       </div>

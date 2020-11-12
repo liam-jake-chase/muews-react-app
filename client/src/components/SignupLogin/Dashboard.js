@@ -8,7 +8,7 @@ import * as AiIcons from 'react-icons/ai'
 import { IconContext } from 'react-icons';
 import { motion } from 'framer-motion';
 
-export default function Dashboard() {
+export default function Dashboard(props) {
 
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
@@ -44,6 +44,12 @@ export default function Dashboard() {
                 <motion.div className="profile__card" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                 <h3 className="text-center mb-4 mt-4">FAVORITES</h3>
                 <AiIcons.AiFillHeart className="profile__icon-two"/>
+                <ul>
+                    <li>The Killers</li>
+                    <li>Avril Lavigne</li>                 
+                    <li>Aqua</li>
+                    <li>Backstreet Boys</li>
+                </ul>
 
                 </motion.div>
 
@@ -64,6 +70,14 @@ export default function Dashboard() {
                 
                 <h3 className="text-center mb-4 mt-4">HISTORY</h3>
                 <AiIcons.AiFillEye className="profile__icon-two"/>
+                <ul>
+                    <li>The Killers</li>
+                    <li>Avril Lavigne</li>
+                    <li>Coldplay</li>
+                    <li>The Beatles</li>
+                    <li>Aqua</li>
+                    <li>Backstreet Boys</li>
+                </ul>
                 </motion.div>
                 
             </div>

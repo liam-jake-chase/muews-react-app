@@ -7,8 +7,21 @@
     border-radius: .5rem;
     color: white;
     height: 2.25rem;
-    box-shadow: 5px 5px 10px #888888;
+    // box-shadow: 5px 5px 10px #888888;
     margin-bottom: 2rem;
+
+}
+
+.btn-login-two {
+    background-color: #3b74ad;
+    width: 25%;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    height: 2.25rem;
+    // box-shadow: 5px 5px 10px #888888;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 
 }
 
@@ -24,8 +37,27 @@
     
 }
 
+.email-style-two {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
+    
+    
+}
+
 .label-header {
     padding-top: 3rem;
+}
+.label-header-two {
+    padding-top: 1rem;
 }
 
 .card-style {
@@ -54,7 +86,7 @@
 }
 
 .form-style {
-    width: 32%;
+    width: 50%;
     border-radius: .5rem;
     height: 2rem;
     border: none;
@@ -108,8 +140,21 @@
     height: 2.25rem;
     text-decoration: none;
     margin-bottom: 2rem;   
-    box-shadow: 5px 5px 10px #888888;
+    // box-shadow: 5px 5px 10px #888888;
 }
+
+.forgot-pass-two {
+    background-color: #3b74ad;   
+    padding: .5rem .55rem;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    height: 2.25rem;
+    text-decoration: none;
+    margin-bottom: 4rem;   
+    // box-shadow: 5px 5px 10px #888888;
+}
+
 
 
 .forgot__need {
@@ -121,6 +166,28 @@
     margin-bottom: 1rem;
     width: 25%;
 }
+
+.forgot__need-two {
+    display: flex;
+    flex-direction: column;    
+    
+    margin-top:4rem;
+    margin-left: 13rem;
+    margin-bottom: 1rem;
+    width: 25%;
+}
+
+.forgot__need-three {
+    display: flex;
+    flex-direction: column;    
+    
+    margin-top: .5rem;
+    margin-left: 13rem;
+    margin-bottom: 1.5rem;
+    width: 25%;
+}
+
+
 .profile__icon {
     position: relative;
     right: 10rem;
@@ -132,3 +199,11 @@
     right: 4rem;
     bottom: 2.5rem;
 }
+
+ul {
+    list-style: square;
+    line-height: 2.5rem;
+    text-align: left;
+    
+    
+  }

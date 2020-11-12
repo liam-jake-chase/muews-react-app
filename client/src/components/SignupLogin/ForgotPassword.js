@@ -3,6 +3,9 @@ import { Form, Button, Card, Alert}  from "react-bootstrap"
 import { useAuth } from '../../Context/AuthContext'
 import { Link } from 'react-router-dom'
 import FooterTwo from '../Footer/FooterTwo';
+import './SignupLogin.scss';
+import { motion } from 'framer-motion';
+import Header from "../Header/Header";
 
 
 export default function ForgotPassword() {
@@ -39,28 +42,29 @@ export default function ForgotPassword() {
  
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2> 
+    <Header />
+          <h2 className="header-login">PASSWORD RESET</h2> 
+    <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >
             {error && <Alert variant="danger">{error}</Alert>}
             {message && <Alert variant="success">{message}</Alert>}       
           <Form onSubmit={handleSubmit}> 
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <div className="label-header">
+              <Form.Label className='label-header'>Email  </Form.Label></div>
+              <Form.Control type="email" ref={emailRef} className="email-style-two" required />
             </Form.Group>                     
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="btn-login" type="submit">
               Reset Password
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
-              <Link to="/login">Log In</Link>
+              <Link to="/login" className="forgot-pass-two">Log In</Link>
           </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
+        
+      <div className="forgot__need-two">
+        Need an account?  </div><Link to="/signup" className="forgot-pass-two">Sign Up</Link>
+     
+      </motion.div>
       <div className="footer__main">
         <FooterTwo />
         </div>   

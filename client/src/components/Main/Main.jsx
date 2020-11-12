@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import FooterTwo from '../Footer/FooterTwo'
 
 
+
 const pageTransition = {
     in: {
       opacity: 1
@@ -15,11 +16,14 @@ const pageTransition = {
     }
   };
 
+  
+
 export default class Main extends Component {
 
    
    
     render() {
+      
         
         if (this.props.redirect) {
             return <Redirect to="/MainTwo" />
