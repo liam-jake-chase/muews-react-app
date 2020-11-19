@@ -153,7 +153,7 @@ getArtistData = () => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  // this.getVideo();
+  this.getVideo();
   this.getArtist();
   this.getEvent();
   this.getArtistData();
@@ -181,7 +181,7 @@ handleSubmitTwo = () => {
         <AuthProvider>       
           <NavbarMenu 
           handleSubmitTwo={this.handleSubmitTwo}
-          name={this.state.artistInfo.name}
+          name={this.state.artistInfo}
           />    
           </AuthProvider>        
         <Switch>

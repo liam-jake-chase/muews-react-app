@@ -18,12 +18,10 @@ const { currentUser } = useAuth()
 
 if(currentUser === null) {
   let loginLink = <Link to="/login" className="current-nav-user">Log In</Link>
-  let searchLink = <Link to="/" className="current-nav-user-two">Search</Link>
+  let searchLink = <Link to="/" className="current-nav-user-two" onClick={props.handleSubmitTwo}>Search</Link>
   return [loginLink, searchLink]
   
-}
-
-  
+} 
 
 
     return (

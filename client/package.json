@@ -11,6 +11,7 @@
     "cors": "^2.8.5",
     "curl": "^0.1.4",
     "framer-motion": "^2.9.4",
+    "gh-pages": "^3.1.0",
     "pure-react-carousel": "^1.27.5",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
@@ -21,8 +22,11 @@
     "styled-components": "^5.2.0",
     "uuidv4": "^6.2.4"
   },
-  "proxy": "http://localhost:8080",
+  
+  "homepage": "https://josh-fusillo.github.io/josh-fusillo-capstone-meuws",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

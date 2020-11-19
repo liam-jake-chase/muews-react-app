@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 
 
 
+
 export default class MainTwo extends Component {
 
     render() {
@@ -26,19 +27,18 @@ export default class MainTwo extends Component {
             }
         };
 
+        
+
+    
+
+        
+
         return (
             <>
-            <motion.div initial="out" animate="in" exit="out" variants={pageTransition} transition={{ ease: "easeOut", duration: 2 }}>
+            <Header />
+           <motion.div initial="out" animate="in" exit="out" variants={pageTransition} transition={{ ease: "easeOut", duration: 2 }}>
                 <div>
-                    {/* <Header
-                        name={this.props.artistInfo.name}
-                        image={this.props.artistInfo.thumb_url}
-                        facebook={this.props.audioDB.strFacebook}
-                        twitter={this.props.audioDB.strTwitter}
-                        homepage={this.props.audioDB.strWebsite}
-                        handleSubmitTwo={this.props.handleSubmitTwo}
-                        value={this.props.value} 
-                    /> */}
+                   
                     <div className="card__wrapper">
 
                         <div className="card__one" >
