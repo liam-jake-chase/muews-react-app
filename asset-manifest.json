@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/josh-fusillo-capstone-meuws/static/css/main.fd5a5e90.chunk.css",
+    "main.js": "/josh-fusillo-capstone-meuws/static/js/main.29d51eea.chunk.js",
+    "main.js.map": "/josh-fusillo-capstone-meuws/static/js/main.29d51eea.chunk.js.map",
+    "runtime-main.js": "/josh-fusillo-capstone-meuws/static/js/runtime-main.70fcf154.js",
+    "runtime-main.js.map": "/josh-fusillo-capstone-meuws/static/js/runtime-main.70fcf154.js.map",
+    "static/css/2.1a0a2c47.chunk.css": "/josh-fusillo-capstone-meuws/static/css/2.1a0a2c47.chunk.css",
+    "static/js/2.bd6f42de.chunk.js": "/josh-fusillo-capstone-meuws/static/js/2.bd6f42de.chunk.js",
+    "static/js/2.bd6f42de.chunk.js.map": "/josh-fusillo-capstone-meuws/static/js/2.bd6f42de.chunk.js.map",
+    "index.html": "/josh-fusillo-capstone-meuws/index.html",
+    "precache-manifest.a6bcd878dbb1f4aa82e5eb95954a1443.js": "/josh-fusillo-capstone-meuws/precache-manifest.a6bcd878dbb1f4aa82e5eb95954a1443.js",
+    "service-worker.js": "/josh-fusillo-capstone-meuws/service-worker.js",
+    "static/css/2.1a0a2c47.chunk.css.map": "/josh-fusillo-capstone-meuws/static/css/2.1a0a2c47.chunk.css.map",
+    "static/css/main.fd5a5e90.chunk.css.map": "/josh-fusillo-capstone-meuws/static/css/main.fd5a5e90.chunk.css.map",
+    "static/js/2.bd6f42de.chunk.js.LICENSE.txt": "/josh-fusillo-capstone-meuws/static/js/2.bd6f42de.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/josh-fusillo-capstone-meuws/static/media/GuaraldoPersonalUse-lggDe.4e09e764.ttf",
+    "static/media/Icon-facebook.svg": "/josh-fusillo-capstone-meuws/static/media/Icon-facebook.1d4e904c.svg",
+    "static/media/Icon-instagram.svg": "/josh-fusillo-capstone-meuws/static/media/Icon-instagram.6866dae2.svg",
+    "static/media/Icon-twitter.svg": "/josh-fusillo-capstone-meuws/static/media/Icon-twitter.2a539e17.svg",
+    "static/media/Logo-movie-wide-two.mp4": "/josh-fusillo-capstone-meuws/static/media/Logo-movie-wide-two.d3de24fb.mp4",
+    "static/media/Logo-transparent.svg": "/josh-fusillo-capstone-meuws/static/media/Logo-transparent.bf5cdb0b.svg",
+    "static/media/Music-news-you-can-use.svg": "/josh-fusillo-capstone-meuws/static/media/Music-news-you-can-use.d425ce08.svg",
+    "static/media/VideoItem.scss": "/josh-fusillo-capstone-meuws/static/media/tv-frame-2.2fc147f5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.70fcf154.js",
+    "static/css/2.1a0a2c47.chunk.css",
+    "static/js/2.bd6f42de.chunk.js",
+    "static/css/main.fd5a5e90.chunk.css",
+    "static/js/main.29d51eea.chunk.js"
+  ]
+}
