@@ -10,8 +10,11 @@ export default class Releases extends Component {
         return (
             <>
           <div>{this.props.title}</div>
+          
           <div>{this.props.year}</div>
+          <br />
           <img src={this.props.thumb} alt="release" />
+          <br /><br />
           </>
         )
       }

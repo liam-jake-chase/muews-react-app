@@ -80,49 +80,49 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    // &__item {
-    //    width: 50%;
-    //     margin-top: .5rem;
-    //     background-color: #222930;
-    //     border-radius: 1rem;
+    &__item {
+       width: 50%;
+        margin-top: .5rem;
+        background-color: #222930;
+        border-radius: 1rem;
 
         
-    // }
+    }
 
-    // &__image {
-    //     height: 5rem;
-    //     width: 8rem;
-    //     border-radius: 3px;
-    // }
+    &__image {
+        height: 5rem;
+        width: 8rem;
+        border-radius: 3px;
+    }
 
-    // &__title {
-    //     font-size: .75rem;
-    //     width: 70%;
-    //     margin-left: 1.75rem;
-    //     color: whitesmoke;
-    //     margin-top: .5rem;
-    // }
+    &__title {
+        font-size: .75rem;
+        width: 70%;
+        margin-left: 1.75rem;
+        color: whitesmoke;
+        margin-top: .5rem;
+    }
 
-    // &__player {
-    //     height: 20rem;
-    //     width: 35rem;
-    //     background-image: url('../../assets/tv-frame-2.png');
-    //     background-position: center;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     margin-left: auto;
-    //     margin-right: auto;
-    //     margin-top: .5rem;
-    //     border-radius: 10px;
-    // }
+    &__player {
+        height: 22vh;
+            width: 100vw;
+        background-image: url('../../assets/tv-frame-2.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: .5rem;
+        border-radius: 10px;
+    }
 
-    // &__player-embed {
-    //     height: 18.2rem;
-    //     width: 32.2rem;
-    //     border: none;
-    //     margin-top: .68rem;
+    &__player-embed {
+        height: 19.5vh;
+        width: 91.5vw;
+        border: none;
+        margin-top: .68rem;
         
-    // }
+    }
 
     &__no-video {
         height: 22vh;
@@ -139,8 +139,8 @@
         border-radius: 10px;
     }
 
-    // &__player-title {
-    //     margin-top: 0;
-    // }
+    &__player-title {
+        margin-top: 1rem;
+    }
 
 }
