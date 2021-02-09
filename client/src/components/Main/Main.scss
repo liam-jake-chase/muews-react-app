@@ -50,10 +50,11 @@
         margin-left: auto;
         margin-right: auto;
        
+       
         @include tablet {
             height: 20rem;
             border-bottom-left-radius: 10rem;
-        border-bottom-right-radius: 10rem;
+            border-bottom-right-radius: 10rem;
         }
         
         @include desktop {

@@ -35,7 +35,7 @@ export default class MainTwo extends Component {
 
         return (
             <>
-            <Header />
+           
            <motion.div initial="out" animate="in" exit="out" variants={pageTransition} transition={{ ease: "easeOut", duration: 2 }}>
                 <div>
                    

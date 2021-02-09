@@ -143,7 +143,7 @@ getArtistData = () => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  this.getVideo();
+  // this.getVideo();
   this.getArtist();
   this.getEvent();
   this.getArtistData();
