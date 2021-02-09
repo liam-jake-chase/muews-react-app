@@ -38,7 +38,7 @@ export default class Main extends Component {
                 <form className="main__form" onSubmit={this.props.handleSubmit}>                        
                      <input type="text" 
                      className="main__search" 
-                     placeholder="Search your favourite artist name here..."
+                     placeholder="Search your favourite musician!"
                      value={this.props.searchName} 
                      onChange={this.props.onChange}                     
                      />              

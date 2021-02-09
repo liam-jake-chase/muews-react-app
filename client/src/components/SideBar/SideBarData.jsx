@@ -9,7 +9,7 @@ import * as IoIcons from 'react-icons/io'
 export const SidebarData = [    
     {
         title: 'Search',
-        path: '/',
+        path: '/josh-fusillo-capstone-muews',
         icon: <SiIcons.SiElasticsearch />,
         cName: 'nav-text',
         

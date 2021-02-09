@@ -17,9 +17,12 @@ const { currentUser } = useAuth()
 
 
 if(currentUser === null) {
-  let loginLink = <Link to="/login" className="current-nav-user">Log In</Link>
-  let searchLink = <Link to="/" className="current-nav-user-two" onClick={props.handleSubmitTwo}>Search</Link>
-  return [loginLink, searchLink]
+  let loginBar = [
+    <Link to="/login" className="current-nav-user"><h2 className="nav-link-text">LOGIN</h2></Link>,
+    <Link to="/josh-fusillo-capstone-muews" className="current-nav-user-two" onClick={props.handleSubmitTwo}><h2 className="nav-link-text">SEARCH</h2></Link>
+  ]  
+  let loginLink = <div className="current-nav-flex">{loginBar}</div>
+  return [loginLink]
   
 } 
 

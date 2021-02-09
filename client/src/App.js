@@ -88,20 +88,10 @@ getEvent = () =>{
 }
 
 getData = () => {
-
-  const options = {
-    method: 'GET',
-    url: 'https://rapidapi.p.rapidapi.com/search.php',
-    params: {s: this.state.searchName},
-    headers: {
-      'x-rapidapi-host': 'theaudiodb.p.rapidapi.com',
-      'x-rapidapi-key': '9ad5aa526emsh0dcf71b6c5b6a8ap13fe96jsn35c2391e2e7b'
-    }
-  };
-
   axios 
-    .request(options)
-    .then(response => {      
+    .get(`https://theaudiodb.com/api/v1/json/1/search.php?s=${this.state.searchName}`)
+    .then(response => {  
+      console.log(response)    
       this.setState({
         audioDB: response.data.artists[0]
       })
@@ -185,7 +175,7 @@ handleSubmitTwo = () => {
           />    
           </AuthProvider>        
         <Switch>
-          <Route exact path="/" render={(props) => ( <Main {...props}   
+          <Route exact path="/josh-fusillo-capstone-muews" render={(props) => ( <Main {...props}   
               value={this.state.searchName} 
               onChange={this.handleSearchName}
               handleSubmit={this.handleSubmit}
