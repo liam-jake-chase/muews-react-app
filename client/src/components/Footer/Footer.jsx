@@ -36,13 +36,14 @@ export default class Footer extends Component {
                     <div className="footer__right">
 
                             
-                        <div className="footer__right">
+                        
                         <a href={instagramLink} target="_blank" rel="noopener noreferrer">
                             <img src={instagram} className="footer__facebook" alt="Instagram logo" /></a>
-                            <a href={homepageLink} target="_blank" rel="noopener noreferrer">
+
+                        <a href={homepageLink} target="_blank" rel="noopener noreferrer">
                                 <img src={this.props.image} className="footer__band" alt="header" /></a>
                             
-                        </div>
+                        
                     </div>
                 </div>
 

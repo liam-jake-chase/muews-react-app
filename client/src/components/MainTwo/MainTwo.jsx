@@ -41,12 +41,6 @@ export default class MainTwo extends Component {
                    
                     <div className="card__wrapper">
 
-                        <div className="card__one" >
-                            <VideoDetail video={this.props.selectedVideo} />
-                            <VideoList handleVideoSelect={this.props.handleVideoSelect} videos={this.props.videos} />
-
-
-                        </div>
 
                         <div className="card__wrapper-two">
                             <motion.div className="card__two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
@@ -61,39 +55,6 @@ export default class MainTwo extends Component {
 
                             </motion.div>
 
-
-                            <div className="card__wrapper-three">
-                                <motion.div className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                                    
-                                                                            
-                                        <Gallery
-                                            imageOne={this.props.audioDB.strArtistClearart}
-                                            imageTwo={this.props.audioDB.strArtistFanart}
-                                            imageThree={this.props.audioDB.strArtistFanart2}
-                                            imageFour={this.props.audioDB.strArtistFanart3}
-                                            imageFive={this.props.audioDB.strArtistLogo}
-                                        />
-
-                                   
-
-                                </motion.div>
-                                <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-                                    <h2 className="releases__header">RELEASES</h2>
-                                    {this.props.releaseData.map(release =>
-                                        <Releases
-                                            
-                                            title={release.title}
-                                            year={release.year}
-                                            thumb={release.thumb}
-                                        />
-                                    )}
-
-
-                                </motion.div>
-                               
-                            </div>
-                        </div>
-                        <div className="card__wrapper-four">
                             <motion.div className="card__four" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                                 <div className="band">
                                     <h1 className="band__header">BAND DETAILS</h1>
@@ -113,7 +74,6 @@ export default class MainTwo extends Component {
                                     <ul className="band__ul"><li className="band__member-name">{this.props.audioDB.strStyle}</li></ul>
                                 </div>
                             </motion.div>
-
                             <motion.div className="card__six" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                             <h2>CONCERT LISTINGS</h2>
                             {this.props.concertInfo && this.props.concertInfo.map(concert =>
@@ -128,7 +88,47 @@ export default class MainTwo extends Component {
                                     )}    
                             </motion.div>
 
+                            <div className="card__wrapper-three">
+                                <motion.div className="card__five" initial="out" animate="in" exit="out" variants={pageTransition} whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                    <h2 className="releases__header">RELEASES</h2>
+                                    {this.props.releaseData.map(release =>
+                                        <Releases
+                                            
+                                            title={release.title}
+                                            year={release.year}
+                                            thumb={release.thumb}
+                                        />
+                                    )}
+
+
+                                </motion.div>
+                               
+                            </div>
                         </div>
+                        <div className="card__wrapper-four">
+                        <div className="card__one" >
+                            <VideoDetail video={this.props.selectedVideo} />
+                            <VideoList handleVideoSelect={this.props.handleVideoSelect} videos={this.props.videos} />
+
+
+                        </div>
+
+
+                        </div>
+                                <motion.div className="card__three" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+                                    
+                                                                            
+                                        <Gallery
+                                            imageOne={this.props.audioDB.strArtistClearart}
+                                            imageTwo={this.props.audioDB.strArtistFanart}
+                                            imageThree={this.props.audioDB.strArtistFanart2}
+                                            imageFour={this.props.audioDB.strArtistFanart3}
+                                            imageFive={this.props.audioDB.strArtistLogo}
+                                        />
+
+                                   
+
+                                </motion.div>
 
 
                     </div>
