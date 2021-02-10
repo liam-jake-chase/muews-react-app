@@ -114,6 +114,12 @@
         margin-right: auto;
         margin-top: .5rem;
         border-radius: 10px;
+
+        @include tablet {
+            width: 60vw;
+            height: 32vh;
+            margin-top: 1rem;
+        }
     }
 
     &__player-embed {
@@ -122,6 +128,11 @@
         border: none;
         margin-top: .68rem;
         
+        @include tablet {
+            width: 55vw;
+            height: 28vh;
+            margin-top: 1rem;
+        }
     }
 
     &__no-video {
@@ -137,10 +148,90 @@
         margin-right: auto;
        
         border-radius: 10px;
+
+        @include tablet {
+            width: 60vw;
+            height: 32vh;
+            margin-top: 1rem;
+        }
     }
 
     &__player-title {
         margin-top: 1rem;
     }
 
+}
+
+@include desktop {
+    .video {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__item {
+       width: 50%;
+        margin-top: .5rem;
+        background-color: #222930;
+        border-radius: 1rem;
+
+        
+    }
+
+    &__image {
+        height: 5rem;
+        width: 8rem;
+        border-radius: 3px;
+    }
+
+    &__title {
+        font-size: .75rem;
+        width: 70%;
+        margin-left: 1.75rem;
+        color: whitesmoke;
+        margin-top: .5rem;
+    }
+
+    &__player {
+        height: 20rem;
+        width: 35rem;
+        background-image: url('../../assets/tv-frame-2.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: .5rem;
+        border-radius: 10px;
+    }
+
+    &__player-embed {
+        height: 18.2rem;
+        width: 32.2rem;
+        border: none;
+        margin-top: .68rem;
+        
+    }
+
+    &__no-video {
+        height: 20rem;
+        width: 35rem;
+        display: flex;
+        justify-content: center;
+        margin-left: 15rem;
+        background-image: url('../../assets/tv-frame-2.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;        
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: .5rem;
+        border-radius: 10px;
+    }
+
+    &__player-title {
+        margin-top: 0;
+    }
+
+}
 }

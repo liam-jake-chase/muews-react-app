@@ -1,0 +1,9 @@
+@import "../../partials/mixins.scss";
+
+.releases-wrapper {
+
+    @include tablet {
+        margin-top: 4rem;
+
+    }
+}

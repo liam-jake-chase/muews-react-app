@@ -1,4 +1,4 @@
-
+@import "../../partials/mixins.scss";
 
 .footer {
     display: flex;
@@ -7,6 +7,11 @@
     height: 8rem;
     width: 100%;
     background-color: #222930;
+
+    @include tablet {
+        flex-direction: row;
+        
+    }
     
 
     &__tagline {
@@ -15,6 +20,9 @@
         position: relative;
         width: 100%;
         
+        @include tablet {
+            width: 50%;
+        }
        
       
     }
@@ -26,6 +34,12 @@
         width: 50%;
         margin-left: 5rem;
         margin-top: 1.5rem;
+
+        @include tablet {
+            margin-left: 0;
+            justify-content: space-evenly;
+            margin-top: 3.25rem;
+        }
         
     }
 
@@ -35,6 +49,12 @@
         justify-content: space-between;
         width: 50%;
         margin-left: 5rem;
+
+        @include tablet {
+            margin-left: 0;
+            justify-content: space-evenly;
+            margin-top: 3.25rem;
+        }
         
     }
 
@@ -49,9 +69,10 @@
 //     }
 
     &__band {
-        width: 1.7rem;
-        height: 1.5rem; 
+        width: 1.4rem;
+        height: 1.4rem; 
         border-radius: 20%;
+        margin-bottom: .5rem;
        
         
       

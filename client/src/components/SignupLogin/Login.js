@@ -42,7 +42,7 @@ export default function Login() {
 
   return (
     <>
-      <Header />
+      
       <h2 className="header-login">LOG IN</h2>
       {error && <Alert variant="danger">{error}</Alert>}
       <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >

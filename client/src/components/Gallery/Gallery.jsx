@@ -14,7 +14,7 @@ export default class Gallery extends Component {
             totalSlides={3}
             isPlaying={true}
           >
-            <Slider>
+            <Slider className="slides-wrapper">
               
               <Slide index={0}><img className="slides" src={this.props.imageTwo} alt="slide" /></Slide>
               <Slide index={1}><img className="slides" src={this.props.imageThree} alt="slide" /></Slide>
