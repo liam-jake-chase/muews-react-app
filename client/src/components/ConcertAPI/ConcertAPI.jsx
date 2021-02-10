@@ -7,6 +7,9 @@ export default class ConcertAPI extends Component {
     render() {
 
         let newDate = dateFormat(this.props.dateTime, 'mmmm dS, yyyy, h:MM:ss TT')
+        
+       
+
 
       
         return (
