@@ -168,7 +168,7 @@ export default class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.getData();  
-    // this.getVideo();
+    this.getVideo();
     this.getArtist();
     this.getEvent();
     this.getArtistData();
@@ -192,11 +192,11 @@ export default class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-        <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp">
-                    <div>
+        <Modal visible={this.state.visible}  effect="fadeInDown">
+                    <div className="modal">
                         <h1>Sorry!</h1>
-                        <p>We were unable to get enough data for this musician, please search again!</p>
-                        <Link to="/josh-fusillo-capstone-muews" onClick={() => this.closeModal()}>Close</Link>
+                        <h3>We were unable to get enough data for this musician, please search again!</h3>
+                        <Link to="/josh-fusillo-capstone-muews" className="modal__button" onClick={() => this.closeModal()}>Close</Link>
                     </div>
         </Modal>
           <AnimatePresence exitBeforeEnter>

@@ -57,7 +57,7 @@ if(currentUser === null) {
           </ul>
         </nav>
       </IconContext.Provider>
-            <img src={logo} alt='transparent' className="logo-transparent"/>
+            {/* <img src={logo} alt='transparent' className="logo-transparent"/> */}
             <div className="header__band"><LoggedUser /></div>
     </>
     )

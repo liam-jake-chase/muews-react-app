@@ -15,8 +15,8 @@
 
 
 .menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: 1rem;
+  font-size: 1.25rem;
   background: none;
 }
 
@@ -158,19 +158,35 @@ span {
 
 .logo-transparent {
   position: absolute;
-  top: -4.5rem;
-  right: 42rem;    
-  height: 25%;
-  width: 25%;
+  top: -1.5rem;
+  right: 34%; 
+  
+  height: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+  @include tablet {
+    top: -8.5rem;
+    right: 0;
+    position: relative;
+    height: 12rem;
+  }
 }
 
 .header__band {
   font-family: "Guaraldo";
-  font-size: 1.5rem;
-  margin-top: 3.2rem;
+  font-size: .45rem;
+  margin-top: 3.5rem;
   color: #5d7996;
   position: absolute;
-  right: 1rem;
-  top: -1.5rem;
+  right: .25rem;
+  top: -1.35rem;
+  
+
+  @include tablet {
+    font-size: 1rem;
+    
+  }
 }
 

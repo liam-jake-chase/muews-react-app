@@ -29,7 +29,7 @@ export default class Main extends Component {
           variants={pageTransition}
         >
           <div className="main">
-            <div>
+            <div className="main__logo-wrapper">
               <video
                 src={animatedLogo}
                 autoPlay

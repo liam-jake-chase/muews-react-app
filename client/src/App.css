@@ -1,23 +1,46 @@
-@import './partials/_fonts.scss';
+@import "./partials/_fonts.scss";
 
 .App {
   text-align: center;
   background-color: #c3cbdb;
   height: 100%;
- 
-  
-  
-  
 }
-
 
 .footer__main {
-  position: absolute; 
-  bottom: 0; 
+  position: absolute;
+  bottom: 0;
   width: 100%;
+}
+
+.modal {
+  height: 20rem;
+  width: 20rem;
   
 }
 
+.modal__button {
+  padding: 1rem 2rem;
+  background-color: #222930;
+  text-decoration: none;
+  position: relative;
+  top: 3.5rem;
+  color: whitesmoke;
+  border-radius: .5rem;
 
+  
+  
+}
 
+@media only screen and (min-width: 768px) {
+  .modal {
+    height: 15rem;
+    width: 30rem;
+  }
+}
 
+@media only screen and (min-width: 1200px) {
+  .modal {
+    height: 20rem;
+    width: 35rem;
+  }
+}
