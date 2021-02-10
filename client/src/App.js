@@ -5,7 +5,7 @@ import axios from "axios";
 import Youtube from "./components/VideoPlayer/Youtube";
 import "./App.css";
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Signup from "./components/SignupLogin/Signup";
 import NavbarMenu from "./components/SideBar/NavbarMenu";
@@ -15,6 +15,8 @@ import ForgotPassword from "./components/SignupLogin/ForgotPassword";
 import UpdateProfile from "./components/SignupLogin/UpdateProfile";
 import Dashboard from "./components/SignupLogin/Dashboard";
 import { AuthProvider } from "./Context/AuthContext";
+import Modal from 'react-awesome-modal';
+
 
 export default class App extends Component {
   state = {
@@ -30,7 +32,22 @@ export default class App extends Component {
     selectedVideo: null,
     redirect: false,
     noData: null,
+    visible: false,
   };
+
+  openModal() {
+    this.setState({
+      visible: true,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      visible: false,
+      redirect: false
+    });
+    
+  }
 
   handleSearchName = (event) => {
     this.setState({
@@ -78,7 +95,7 @@ export default class App extends Component {
             concertInfo: response.data,
           });
         }
-        console.log(this.state.noData)
+        
       });
   };
 
@@ -87,10 +104,22 @@ export default class App extends Component {
       .get(
         `https://theaudiodb.com/api/v1/json/1/search.php?s=${this.state.searchName}`
       )
-      .then((response) => {        
-        this.setState({
-          audioDB: response.data.artists[0],
-        });
+      .then((response) => {   
+          
+        if (response.data.artists === null) {          
+          this.setState({
+            redirect: false
+            
+          })  
+          this.openModal()
+          
+        } else {
+
+          this.setState({
+            audioDB: response.data.artists[0],
+          });
+        }
+        
       });
   };
 
@@ -123,6 +152,7 @@ export default class App extends Component {
                   this.setState({
                     releaseData: response.data.releases,
                   });
+                  console.log(response.data.releases)
                 });
             });
         };
@@ -134,13 +164,14 @@ export default class App extends Component {
     this.setState({ selectedVideo: video });
   };
 
+  
   handleSubmit = (event) => {
     event.preventDefault();
+    this.getData();  
     // this.getVideo();
     this.getArtist();
     this.getEvent();
     this.getArtistData();
-    this.getData();
     this.setState({
       redirect: true,
     });
@@ -157,9 +188,17 @@ export default class App extends Component {
   render() {
 
     
+    
     return (
       <div className="App">
         <BrowserRouter>
+        <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp">
+                    <div>
+                        <h1>Sorry!</h1>
+                        <p>We were unable to get enough data for this musician, please search again!</p>
+                        <Link to="/josh-fusillo-capstone-muews" onClick={() => this.closeModal()}>Close</Link>
+                    </div>
+        </Modal>
           <AnimatePresence exitBeforeEnter>
             <AuthProvider>
               <NavbarMenu

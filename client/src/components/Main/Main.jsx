@@ -19,6 +19,7 @@ export default class Main extends Component {
     if (this.props.redirect) {
       return <Redirect to="/MainTwo" />;
     }
+    
     return (
       <>
         <motion.div
