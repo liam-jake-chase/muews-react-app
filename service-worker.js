@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/josh-fusillo-capstone-muews/precache-manifest.afcb4cf88a1cdc099a1d965afff777dd.js"
+  "/josh-fusillo-capstone-muews/precache-manifest.3deddc67acabf42350850e6da134d8f6.js"
 );
 
 self.addEventListener('message', (event) => {
