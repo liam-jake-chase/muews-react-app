@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/josh-fusillo-capstone-muews/static/css/main.548f67c0.chunk.css",
+    "main.css": "/josh-fusillo-capstone-muews/static/css/main.8b9c0dad.chunk.css",
     "main.js": "/josh-fusillo-capstone-muews/static/js/main.abb44515.chunk.js",
     "main.js.map": "/josh-fusillo-capstone-muews/static/js/main.abb44515.chunk.js.map",
     "runtime-main.js": "/josh-fusillo-capstone-muews/static/js/runtime-main.2486f4fc.js",
@@ -9,10 +9,10 @@
     "static/js/2.59eaab52.chunk.js": "/josh-fusillo-capstone-muews/static/js/2.59eaab52.chunk.js",
     "static/js/2.59eaab52.chunk.js.map": "/josh-fusillo-capstone-muews/static/js/2.59eaab52.chunk.js.map",
     "index.html": "/josh-fusillo-capstone-muews/index.html",
-    "precache-manifest.058c5d79b0af2fea24519cfb0acf6763.js": "/josh-fusillo-capstone-muews/precache-manifest.058c5d79b0af2fea24519cfb0acf6763.js",
+    "precache-manifest.2a2694414760a123e63460cfeb9136ca.js": "/josh-fusillo-capstone-muews/precache-manifest.2a2694414760a123e63460cfeb9136ca.js",
     "service-worker.js": "/josh-fusillo-capstone-muews/service-worker.js",
     "static/css/2.1a0a2c47.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/2.1a0a2c47.chunk.css.map",
-    "static/css/main.548f67c0.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/main.548f67c0.chunk.css.map",
+    "static/css/main.8b9c0dad.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/main.8b9c0dad.chunk.css.map",
     "static/js/2.59eaab52.chunk.js.LICENSE.txt": "/josh-fusillo-capstone-muews/static/js/2.59eaab52.chunk.js.LICENSE.txt",
     "static/media/App.css": "/josh-fusillo-capstone-muews/static/media/GuaraldoPersonalUse-lggDe.4e09e764.ttf",
     "static/media/Icon-facebook.svg": "/josh-fusillo-capstone-muews/static/media/Icon-facebook.1d4e904c.svg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.2486f4fc.js",
     "static/css/2.1a0a2c47.chunk.css",
     "static/js/2.59eaab52.chunk.js",
-    "static/css/main.548f67c0.chunk.css",
+    "static/css/main.8b9c0dad.chunk.css",
     "static/js/main.abb44515.chunk.js"
   ]
 }
