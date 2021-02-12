@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/josh-fusillo-capstone-muews/static/css/main.1ace1efb.chunk.css",
-    "main.js": "/josh-fusillo-capstone-muews/static/js/main.5273e860.chunk.js",
-    "main.js.map": "/josh-fusillo-capstone-muews/static/js/main.5273e860.chunk.js.map",
+    "main.css": "/josh-fusillo-capstone-muews/static/css/main.071512ad.chunk.css",
+    "main.js": "/josh-fusillo-capstone-muews/static/js/main.50019a1b.chunk.js",
+    "main.js.map": "/josh-fusillo-capstone-muews/static/js/main.50019a1b.chunk.js.map",
     "runtime-main.js": "/josh-fusillo-capstone-muews/static/js/runtime-main.2486f4fc.js",
     "runtime-main.js.map": "/josh-fusillo-capstone-muews/static/js/runtime-main.2486f4fc.js.map",
     "static/css/2.1a0a2c47.chunk.css": "/josh-fusillo-capstone-muews/static/css/2.1a0a2c47.chunk.css",
     "static/js/2.1cce5456.chunk.js": "/josh-fusillo-capstone-muews/static/js/2.1cce5456.chunk.js",
     "static/js/2.1cce5456.chunk.js.map": "/josh-fusillo-capstone-muews/static/js/2.1cce5456.chunk.js.map",
     "index.html": "/josh-fusillo-capstone-muews/index.html",
-    "precache-manifest.c24854b1792ac3ed9b60a78a7dd4f89a.js": "/josh-fusillo-capstone-muews/precache-manifest.c24854b1792ac3ed9b60a78a7dd4f89a.js",
+    "precache-manifest.6d18459583ec7e1e68bf2c504a41a1b0.js": "/josh-fusillo-capstone-muews/precache-manifest.6d18459583ec7e1e68bf2c504a41a1b0.js",
     "service-worker.js": "/josh-fusillo-capstone-muews/service-worker.js",
     "static/css/2.1a0a2c47.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/2.1a0a2c47.chunk.css.map",
-    "static/css/main.1ace1efb.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/main.1ace1efb.chunk.css.map",
+    "static/css/main.071512ad.chunk.css.map": "/josh-fusillo-capstone-muews/static/css/main.071512ad.chunk.css.map",
     "static/js/2.1cce5456.chunk.js.LICENSE.txt": "/josh-fusillo-capstone-muews/static/js/2.1cce5456.chunk.js.LICENSE.txt",
     "static/media/App.css": "/josh-fusillo-capstone-muews/static/media/GuaraldoPersonalUse-lggDe.4e09e764.ttf",
     "static/media/Icon-facebook.svg": "/josh-fusillo-capstone-muews/static/media/Icon-facebook.1d4e904c.svg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.2486f4fc.js",
     "static/css/2.1a0a2c47.chunk.css",
     "static/js/2.1cce5456.chunk.js",
-    "static/css/main.1ace1efb.chunk.css",
-    "static/js/main.5273e860.chunk.js"
+    "static/css/main.071512ad.chunk.css",
+    "static/js/main.50019a1b.chunk.js"
   ]
 }
