@@ -4,7 +4,7 @@ import { useAuth } from '../../Context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import './SignupLogin.scss'
 import FooterTwo from '../Footer/FooterTwo';
-import Header from '../Header/Header'
+
 import { motion } from 'framer-motion';
 
 

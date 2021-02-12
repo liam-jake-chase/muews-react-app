@@ -232,6 +232,7 @@ export default class MainTwo extends Component {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
+                    <h2 className="releases__header">GALLERY</h2>
                     <Gallery
                       imageOne={this.props.audioDB.strArtistClearart}
                       imageTwo={this.props.audioDB.strArtistFanart}
@@ -320,7 +321,7 @@ export default class MainTwo extends Component {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h2>CONCERT LISTINGS</h2>
+                  <h2>EVENTS</h2>
                   <h3 className="no-event">{this.props.noData}</h3>
                   {this.props.concertInfo &&
                     this.props.concertInfo.map((concert) => (

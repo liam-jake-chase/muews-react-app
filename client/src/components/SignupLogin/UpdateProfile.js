@@ -5,7 +5,7 @@ import { useAuth } from '../../Context/AuthContext'
 import FooterTwo from "../Footer/FooterTwo"
 import './SignupLogin.scss';
 import { motion } from 'framer-motion';
-import Header from "../Header/Header";
+
 
 
 export default function Signup() {

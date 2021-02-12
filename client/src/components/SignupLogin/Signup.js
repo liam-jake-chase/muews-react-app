@@ -5,7 +5,7 @@ import { useAuth } from '../../Context/AuthContext'
 import FooterTwo from '../Footer/FooterTwo';
 import './SignupLogin.scss';
 import { motion } from 'framer-motion';
-import Header from "../Header/Header";
+
 
 
 export default function Signup() {
@@ -45,7 +45,7 @@ export default function Signup() {
 
   return (
     <>
-     <Header />
+ 
           <h2 className="header-login">Sign Up</h2> 
           <motion.div className="profile__card-two" whileHover={{ scale: 1.03 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} >
             {error && <Alert variant="danger">{error}</Alert>}         

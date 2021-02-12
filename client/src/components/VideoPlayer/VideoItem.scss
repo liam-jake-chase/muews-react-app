@@ -193,8 +193,8 @@
     }
 
     &__player {
-        height: 20rem;
-        width: 35rem;
+        height: 16rem;
+        width: 24vw;
         background-image: url('../../assets/tv-frame-2.png');
         background-position: center;
         background-repeat: no-repeat;
@@ -206,16 +206,18 @@
     }
 
     &__player-embed {
-        height: 18.2rem;
-        width: 32.2rem;
+        height: 14.5rem;
+        width: 21.75vw;
         border: none;
-        margin-top: .68rem;
+        margin-top: .95rem;
         
     }
 
+    
+
     &__no-video {
-        height: 20rem;
-        width: 35rem;
+        height: 16rem;
+        width: 24vw;
         display: flex;
         justify-content: center;
         margin-left: 15rem;
@@ -223,10 +225,12 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;        
-        margin-left: auto;
-        margin-right: auto;
+        right: 0;
         margin-top: .5rem;
         border-radius: 10px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__player-title {

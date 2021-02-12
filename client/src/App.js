@@ -15,8 +15,7 @@ import ForgotPassword from "./components/SignupLogin/ForgotPassword";
 import UpdateProfile from "./components/SignupLogin/UpdateProfile";
 import Dashboard from "./components/SignupLogin/Dashboard";
 import { AuthProvider } from "./Context/AuthContext";
-import Modal from 'react-awesome-modal';
-
+import Modal from "react-awesome-modal";
 
 export default class App extends Component {
   state = {
@@ -44,9 +43,8 @@ export default class App extends Component {
   closeModal() {
     this.setState({
       visible: false,
-      redirect: false
+      redirect: false,
     });
-    
   }
 
   handleSearchName = (event) => {
@@ -85,7 +83,6 @@ export default class App extends Component {
         `https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`
       )
       .then((response) => {
-       
         if (response.data.length === 0) {
           this.setState({
             noData: "No Event Listings",
@@ -95,7 +92,6 @@ export default class App extends Component {
             concertInfo: response.data,
           });
         }
-        
       });
   };
 
@@ -104,22 +100,17 @@ export default class App extends Component {
       .get(
         `https://theaudiodb.com/api/v1/json/1/search.php?s=${this.state.searchName}`
       )
-      .then((response) => {   
-          
-        if (response.data.artists === null) {          
+      .then((response) => {
+        if (response.data.artists === null) {
           this.setState({
-            redirect: false
-            
-          })  
-          this.openModal()
-          
+            redirect: false,
+          });
+          this.openModal();
         } else {
-
           this.setState({
             audioDB: response.data.artists[0],
           });
         }
-        
       });
   };
 
@@ -152,7 +143,7 @@ export default class App extends Component {
                   this.setState({
                     releaseData: response.data.releases,
                   });
-                  console.log(response.data.releases)
+                  console.log(response.data.releases);
                 });
             });
         };
@@ -164,10 +155,9 @@ export default class App extends Component {
     this.setState({ selectedVideo: video });
   };
 
-  
   handleSubmit = (event) => {
     event.preventDefault();
-    this.getData();  
+    this.getData();
     this.getVideo();
     this.getArtist();
     this.getEvent();
@@ -182,23 +172,27 @@ export default class App extends Component {
       redirect: false,
     });
   };
-  
-
 
   render() {
-
-    
-    
     return (
       <div className="App">
         <BrowserRouter>
-        <Modal visible={this.state.visible}  effect="fadeInDown">
-                    <div className="modal">
-                        <h1>Sorry!</h1>
-                        <h3>We were unable to get enough data for this musician, please search again!</h3>
-                        <Link to="/josh-fusillo-capstone-muews" className="modal__button" onClick={() => this.closeModal()}>Close</Link>
-                    </div>
-        </Modal>
+          <Modal visible={this.state.visible} effect="fadeInDown">
+            <div className="modal">
+              <h1>Sorry!</h1>
+              <h3>
+                We were unable to get enough data for this musician, please
+                search again!
+              </h3>
+              <Link
+                to="/josh-fusillo-capstone-muews"
+                className="modal__button"
+                onClick={() => this.closeModal()}
+              >
+                Close
+              </Link>
+            </div>
+          </Modal>
           <AnimatePresence exitBeforeEnter>
             <AuthProvider>
               <NavbarMenu
