@@ -49,8 +49,11 @@ function NavbarMenu(props) {
 
   if (currentUser !== null) {
     let logOut = (
-      <li>
-        <Link variant="link" className="logout-text" onClick={handleLogout}>
+      <li className="">
+        <Link variant="link" className="" onClick={handleLogout}>
+        <span>
+          <AiIcons.AiOutlineLogout className="logout-icon"/>
+        </span>
           Log Out
         </Link>
       </li>
@@ -81,14 +84,10 @@ function NavbarMenu(props) {
                   </li>
                 );
               })}
-              <div className="logout-flex">
-                <span>
-                  <AiIcons.AiOutlineLogout />
-                </span>
-                <span>{logOut}</span>
-              </div>
-        <img src={logo} alt='transparent' className="logo-transparent"/>
-              
+              {<li className="logout-flex">
+                <span className="logout-text">{logOut}</span>
+              </li>}
+              <img src={logo} alt="transparent" className="logo-transparent" />
             </ul>
           </nav>
         </IconContext.Provider>
