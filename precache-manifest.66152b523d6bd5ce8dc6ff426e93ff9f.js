@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da73b649082b51131c87287ea89e6f50",
+    "revision": "974245b5143c615ca76d1b7717391144",
     "url": "/josh-fusillo-capstone-muews/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/josh-fusillo-capstone-muews/static/css/2.1a0a2c47.chunk.css"
   },
   {
-    "revision": "435244ca16a8202dc01a",
-    "url": "/josh-fusillo-capstone-muews/static/css/main.f718ae50.chunk.css"
+    "revision": "35b96ae71792b3e7703e",
+    "url": "/josh-fusillo-capstone-muews/static/css/main.d12b3b29.chunk.css"
   },
   {
     "revision": "388b4e6a88c2f9709705",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/josh-fusillo-capstone-muews/static/js/2.1cce5456.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "435244ca16a8202dc01a",
-    "url": "/josh-fusillo-capstone-muews/static/js/main.9c3e64c6.chunk.js"
+    "revision": "35b96ae71792b3e7703e",
+    "url": "/josh-fusillo-capstone-muews/static/js/main.50019a1b.chunk.js"
   },
   {
     "revision": "847065fca144510273a2",
