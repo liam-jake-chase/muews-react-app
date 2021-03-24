@@ -81,7 +81,7 @@ export default function Login() {
         </Link>
       </motion.div>
       <div className="footer__main">
-        <FooterTwo />
+        
       </div>
     </>
   );

@@ -237,12 +237,12 @@ ul {
   }
 
   .footer__main {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -4.5rem;
     width: 100%;
 
     @include tablet {
-        position: absolute;
+        position: relative;
     }
   }
 

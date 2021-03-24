@@ -22,14 +22,14 @@ function NavbarMenu(props) {
   if (currentUser === null) {
     let loginBar = [
       <Link to="/login" className="current-nav-user">
-        <h2 className="nav-link-text">LOGIN</h2>
+        <h2 className="nav-link-text login">LOGIN</h2>
       </Link>,
       <Link
         to="/josh-fusillo-capstone-muews"
-        className="current-nav-user-two"
+        className="current-nav-user"
         onClick={props.handleSubmitTwo}
       >
-        <h2 className="nav-link-text">SEARCH</h2>
+        <h2 className="nav-link-text search">SEARCH</h2>
       </Link>,
     ];
     let loginLink = <div className="current-nav-flex">{loginBar}</div>;
@@ -51,9 +51,9 @@ function NavbarMenu(props) {
     let logOut = (
       <li className="">
         <Link variant="link" className="" onClick={handleLogout}>
-        <span>
-          <AiIcons.AiOutlineLogout className="logout-icon"/>
-        </span>
+          <span>
+            <AiIcons.AiOutlineLogout className="logout-icon" />
+          </span>
           Log Out
         </Link>
       </li>
@@ -84,9 +84,11 @@ function NavbarMenu(props) {
                   </li>
                 );
               })}
-              {<li className="logout-flex">
-                <span className="logout-text">{logOut}</span>
-              </li>}
+              {
+                <li className="logout-flex">
+                  <span className="logout-text">{logOut}</span>
+                </li>
+              }
               <img src={logo} alt="transparent" className="logo-transparent" />
             </ul>
           </nav>

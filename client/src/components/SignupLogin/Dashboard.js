@@ -84,7 +84,7 @@ export default function Dashboard(props) {
             </IconContext.Provider>
             </motion.div>
             <div className="footer__main">
-                <FooterTwo />
+          
             </div>
         </>
     )

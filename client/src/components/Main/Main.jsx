@@ -50,7 +50,7 @@ export default class Main extends Component {
               </form>
             </div>
             <div className="footer__main-one">
-              <FooterTwo />
+             
             </div>
           </div>
         </motion.div>

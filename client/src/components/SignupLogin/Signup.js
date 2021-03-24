@@ -75,7 +75,7 @@ export default function Signup() {
       
       </motion.div>
       <div className="footer__main">
-        <FooterTwo />
+        
         </div>   
     </>
   )
