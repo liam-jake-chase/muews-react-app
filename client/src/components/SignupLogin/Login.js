@@ -80,9 +80,7 @@ export default function Login() {
           Sign Up
         </Link>
       </motion.div>
-      <div className="footer__main">
-        
-      </div>
+      <div className="footer__main"></div>
     </>
   );
 }

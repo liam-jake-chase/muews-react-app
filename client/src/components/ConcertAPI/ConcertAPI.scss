@@ -1,33 +1,25 @@
-
-
 .concert {
+  &__listings {
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    border-bottom: #78a3f3 solid 1px;
+    margin-bottom: 1rem;
+  }
 
-    &__listings {
-        display: flex;
-        flex-direction: column;
-        line-height: 0;
-        border-bottom: #78a3f3 solid 1px;
-        margin-bottom: 1rem;
+  &__button {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: #78a3f3;
+    color: whitesmoke;
+    border: none;
+    box-shadow: 3px 5px 5px #3b74ad;
+  }
 
-    }
-    
-    &__button {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-        width: 10rem;
-        height: 2rem;
-        border-radius: .5rem;
-        background-color: #78a3f3;
-        color: whitesmoke;
-        border: none;
-        box-shadow: 3px 5px 5px #3b74ad;
-
-    }   
-
-    &__text-style {
-        color: grey;
-    }
-        
+  &__text-style {
+    color: grey;
+  }
 }
-
-    

@@ -1,48 +1,41 @@
 @import "../../partials/mixins.scss";
 
 .slides {
-    height: 30vh;
-    width: 100%;
-    margin-left:auto;
+  height: 30vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    height: 40vh;
+    // width: 30rem;
+    margin-left: auto;
     margin-right: auto;
-    
+    margin-top: 1rem;
+  }
 
-
-    @include tablet {
-        height: 40vh;
-        // width: 30rem;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 1rem;
-    }
-
-    @include desktop {
-        position: relative;
-        left: .6rem;
-        top: 1rem;
-        width: 97%;
-        height: 25rem;
-        
-    }
-    
+  @include desktop {
+    position: relative;
+    left: 0.6rem;
+    top: 1rem;
+    width: 97%;
+    height: 25rem;
+  }
 }
 
 .slides-wrapper {
-    
+  height: 15rem;
+  width: 95vw;
+  margin-left: 0.5rem;
 
-    height: 15rem;
-    width: 95vw;
-    margin-left: .5rem;
+  @include tablet {
+    height: 25rem;
+    margin-left: 1.5rem;
+  }
 
-    @include tablet {
-
-        height: 25rem;
-        margin-left: 1.5rem;
-    }
-
-    @include desktop {
-        height: 40rem;
-        width: 100%;
-        margin: auto;
-    }
+  @include desktop {
+    height: 40rem;
+    width: 100%;
+    margin: auto;
+  }
 }

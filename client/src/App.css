@@ -4,7 +4,6 @@
   text-align: center;
   background-color: #c3cbdb;
   height: 100vh;
-  
 }
 
 .footer__main {
@@ -16,7 +15,6 @@
 .modal {
   height: 20rem;
   width: 20rem;
-  
 }
 
 .modal__button {
@@ -26,10 +24,7 @@
   position: relative;
   top: 3.5rem;
   color: whitesmoke;
-  border-radius: .5rem;
-
-  
-  
+  border-radius: 0.5rem;
 }
 
 @media only screen and (min-width: 768px) {

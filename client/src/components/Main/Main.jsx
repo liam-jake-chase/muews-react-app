@@ -19,7 +19,7 @@ export default class Main extends Component {
     if (this.props.redirect) {
       return <Redirect to="/MainTwo" />;
     }
-    
+
     return (
       <>
         <motion.div
@@ -49,9 +49,7 @@ export default class Main extends Component {
                 />
               </form>
             </div>
-            <div className="footer__main-one">
-             
-            </div>
+            <div className="footer__main-one"></div>
           </div>
         </motion.div>
       </>

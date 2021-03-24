@@ -9,12 +9,7 @@ import Releases from "../Releases/Releases";
 import Gallery from "../Gallery/Gallery";
 import Footer from "../Footer/Footer";
 
-
-
 export default class MainTwo extends Component {
-  
-  
-
   render() {
     const pageTransition = {
       in: {
@@ -24,10 +19,6 @@ export default class MainTwo extends Component {
         opacity: 0,
       },
     };
-
-    
-
-    
 
     return (
       <>
@@ -349,7 +340,6 @@ export default class MainTwo extends Component {
           handleSubmitTwo={this.props.handleSubmitTwo}
           value={this.props.value}
         />
-       
       </>
     );
   }

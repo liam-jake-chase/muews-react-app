@@ -1,4 +1,4 @@
-@import '../../partials/mixins.scss';
+@import "../../partials/mixins.scss";
 
 // .video {
 
@@ -12,7 +12,6 @@
 //         background-color: #222930;
 //         border-radius: 1rem;
 
-        
 //     }
 
 //     &__image {
@@ -47,7 +46,7 @@
 //         width: 32.2rem;
 //         border: none;
 //         margin-top: .68rem;
-        
+
 //     }
 
 //     &__no-video {
@@ -59,7 +58,7 @@
 //         background-image: url('../../assets/tv-frame-2.png');
 //         background-position: center;
 //         background-repeat: no-repeat;
-//         background-size: cover;        
+//         background-size: cover;
 //         margin-left: auto;
 //         margin-right: auto;
 //         margin-top: .5rem;
@@ -72,170 +71,157 @@
 
 // }
 
-
-
 .video {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
+  &__item {
+    width: 50%;
+    margin-top: 0.5rem;
+    background-color: #222930;
+    border-radius: 1rem;
+  }
+
+  &__image {
+    height: 5rem;
+    width: 8rem;
+    border-radius: 3px;
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    width: 70%;
+    margin-left: 1.75rem;
+    color: whitesmoke;
+    margin-top: 0.5rem;
+  }
+
+  &__player {
+    height: 22vh;
+    width: 100vw;
+    background-image: url("../../assets/tv-frame-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+
+    @include tablet {
+      width: 60vw;
+      height: 32vh;
+      margin-top: 1rem;
+    }
+  }
+
+  &__player-embed {
+    height: 19.5vh;
+    width: 91.5vw;
+    border: none;
+    margin-top: 0.68rem;
+
+    @include tablet {
+      width: 55vw;
+      height: 28vh;
+      margin-top: 1rem;
+    }
+  }
+
+  &__no-video {
+    height: 22vh;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url("../../assets/tv-frame-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
 
-    &__item {
-       width: 50%;
-        margin-top: .5rem;
-        background-color: #222930;
-        border-radius: 1rem;
+    border-radius: 10px;
 
-        
+    @include tablet {
+      width: 60vw;
+      height: 32vh;
+      margin-top: 1rem;
     }
+  }
 
-    &__image {
-        height: 5rem;
-        width: 8rem;
-        border-radius: 3px;
-    }
-
-    &__title {
-        font-size: .75rem;
-        width: 70%;
-        margin-left: 1.75rem;
-        color: whitesmoke;
-        margin-top: .5rem;
-    }
-
-    &__player {
-        height: 22vh;
-            width: 100vw;
-        background-image: url('../../assets/tv-frame-2.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: .5rem;
-        border-radius: 10px;
-
-        @include tablet {
-            width: 60vw;
-            height: 32vh;
-            margin-top: 1rem;
-        }
-    }
-
-    &__player-embed {
-        height: 19.5vh;
-        width: 91.5vw;
-        border: none;
-        margin-top: .68rem;
-        
-        @include tablet {
-            width: 55vw;
-            height: 28vh;
-            margin-top: 1rem;
-        }
-    }
-
-    &__no-video {
-        height: 22vh;
-        width: 100vw;
-        display: flex;
-        justify-content: center;        
-        background-image: url('../../assets/tv-frame-2.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;        
-        margin-left: auto;
-        margin-right: auto;
-       
-        border-radius: 10px;
-
-        @include tablet {
-            width: 60vw;
-            height: 32vh;
-            margin-top: 1rem;
-        }
-    }
-
-    &__player-title {
-        margin-top: 1rem;
-    }
-
+  &__player-title {
+    margin-top: 1rem;
+  }
 }
 
 @include desktop {
-    .video {
-
+  .video {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
     &__item {
-       width: 50%;
-        margin-top: .5rem;
-        background-color: #222930;
-        border-radius: 1rem;
-
-        
+      width: 50%;
+      margin-top: 0.5rem;
+      background-color: #222930;
+      border-radius: 1rem;
     }
 
     &__image {
-        height: 5rem;
-        width: 8rem;
-        border-radius: 3px;
+      height: 5rem;
+      width: 8rem;
+      border-radius: 3px;
     }
 
     &__title {
-        font-size: .75rem;
-        width: 70%;
-        margin-left: 1.75rem;
-        color: whitesmoke;
-        margin-top: .5rem;
+      font-size: 0.75rem;
+      width: 70%;
+      margin-left: 1.75rem;
+      color: whitesmoke;
+      margin-top: 0.5rem;
     }
 
     &__player {
-        height: 16rem;
-        width: 24vw;
-        background-image: url('../../assets/tv-frame-2.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: .5rem;
-        border-radius: 10px;
+      height: 16rem;
+      width: 24vw;
+      background-image: url("../../assets/tv-frame-2.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0.5rem;
+      border-radius: 10px;
     }
 
     &__player-embed {
-        height: 14.5rem;
-        width: 21.75vw;
-        border: none;
-        margin-top: .95rem;
-        
+      height: 14.5rem;
+      width: 21.75vw;
+      border: none;
+      margin-top: 0.95rem;
     }
 
-    
-
     &__no-video {
-        height: 16rem;
-        width: 24vw;
-        display: flex;
-        justify-content: center;
-        margin-left: 15rem;
-        background-image: url('../../assets/tv-frame-2.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;        
-        right: 0;
-        margin-top: .5rem;
-        border-radius: 10px;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
+      height: 16rem;
+      width: 24vw;
+      display: flex;
+      justify-content: center;
+      margin-left: 15rem;
+      background-image: url("../../assets/tv-frame-2.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      right: 0;
+      margin-top: 0.5rem;
+      border-radius: 10px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &__player-title {
-        margin-top: 0;
+      margin-top: 0;
     }
-
-}
+  }
 }

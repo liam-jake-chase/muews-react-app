@@ -1,84 +1,71 @@
 @import "../../partials/mixins.scss";
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 8rem;
+  width: 100%;
+  background-color: #222930;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__tagline {
+    z-index: 9999;
+    margin: auto;
+    position: relative;
     width: 100%;
-    background-color: #222930;
 
     @include tablet {
-        flex-direction: row;
-        
+      width: 50%;
     }
-    
+  }
 
-    &__tagline {
-        z-index: 9999;    
-        margin: auto;
-        position: relative;
-        width: 100%;
-        
-        @include tablet {
-            width: 50%;
-        }
-       
-      
+  &__left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 5rem;
+    margin-top: 1.5rem;
+
+    @include tablet {
+      margin-left: 0;
+      justify-content: space-evenly;
+      margin-top: 3.25rem;
     }
+  }
 
-    &__left{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
-        margin-left: 5rem;
-        margin-top: 1.5rem;
+  &__right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 5rem;
 
-        @include tablet {
-            margin-left: 0;
-            justify-content: space-evenly;
-            margin-top: 3.25rem;
-        }
-        
+    @include tablet {
+      margin-left: 0;
+      justify-content: space-evenly;
+      margin-top: 3.25rem;
     }
+  }
 
-    &__right {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
-        margin-left: 5rem;
+  //     &__facebook {
+  //         width: 3.5rem;
+  //         height: 3.5rem;
+  //         border-radius: 20%;
+  //         border: 2px solid #304050;
+  //         margin-top: 2.5rem;
+  //         margin-right: 4rem;
+  //         margin-left: 4rem;
+  //     }
 
-        @include tablet {
-            margin-left: 0;
-            justify-content: space-evenly;
-            margin-top: 3.25rem;
-        }
-        
-    }
-
-//     &__facebook {
-//         width: 3.5rem;
-//         height: 3.5rem; 
-//         border-radius: 20%;
-//         border: 2px solid #304050;
-//         margin-top: 2.5rem;
-//         margin-right: 4rem;
-//         margin-left: 4rem;
-//     }
-
-    &__band {
-        width: 1.4rem;
-        height: 1.4rem; 
-        border-radius: 20%;
-        margin-bottom: .5rem;
-       
-        
-      
-    }
-
-    
-
-    
+  &__band {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 20%;
+    margin-bottom: 0.5rem;
+  }
 }
