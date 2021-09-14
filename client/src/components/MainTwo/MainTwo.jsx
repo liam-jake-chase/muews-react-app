@@ -10,6 +10,7 @@ import Gallery from "../Gallery/Gallery";
 import Footer from "../Footer/Footer";
 
 export default class MainTwo extends Component {
+  
   render() {
     const pageTransition = {
       in: {
@@ -19,6 +20,8 @@ export default class MainTwo extends Component {
         opacity: 0,
       },
     };
+
+    
 
     return (
       <>
@@ -115,11 +118,12 @@ export default class MainTwo extends Component {
                     {this.props.concertInfo &&
                       this.props.concertInfo.map((concert) => (
                         <ConcertAPI
-                          dateTime={concert.datetime}
-                          onSale={concert.on_sale_datetime}
-                          venueName={concert.venue.name}
-                          venueLocation={concert.venue.location}
-                          ticketLink={concert.url}
+                          displayName={concert.displayName}
+                          dateTime={concert.start.date}
+                          type={concert.type}
+                          venueName={concert.venue.displayName}
+                          venueLocation={concert.venue.metroArea.displayName}
+                          ticketLink={concert.uri}
                           noData={this.props.noData}
                         />
                       ))}

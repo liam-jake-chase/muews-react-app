@@ -50,6 +50,15 @@ export default class App extends Component {
   handleSearchName = (event) => {
     this.setState({
       searchName: event.target.value,
+      newsResults: [],
+      videos: [],
+      artistInfo: [],
+      concertInfo: [],
+      discogsInfo: [],
+      audioDB: [],
+      releaseData: [],
+      images: [],
+      selectedVideo: null,
     });
   };
 
@@ -80,16 +89,17 @@ export default class App extends Component {
   getEvent = () => {
     axios
       .get(
-        `https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`
+        `https://api.songkick.com/api/3.0/events.json?apikey=wxKYION7NKwz6v44&artist_name=${this.state.searchName}`
       )
+      // .then(res => console.log(res))      
       .then((response) => {
-        if (response.data.length === 0) {
+        if (response.data.resultsPage.totalEntries === 0) {
           this.setState({
             noData: "No Event Listings",
           });
         } else {
           this.setState({
-            concertInfo: response.data,
+            concertInfo: response.data.resultsPage.results.event,
           });
         }
       });
@@ -158,7 +168,7 @@ export default class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.getData();
-    this.getVideo();
+    // this.getVideo();
     this.getArtist();
     this.getEvent();
     this.getArtistData();
