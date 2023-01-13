@@ -53,22 +53,10 @@ export default class App extends Component {
     });
   };
 
-  getVideo = async () => {
-    const response = await Youtube.get("/search", {
-      params: {
-        q: this.state.searchName,
-      },
-    });
-
-    this.setState({
-      videos: response.data.items,
-    });
-  };
-
   getArtist = () => {
     axios
       .get(
-        `https://rest.bandsintown.com/artists/${this.state.searchName}/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`
+        `https://www.theaudiodb.com/api/v1/json/523532/search.php?s=${this.state.searchName}`
       )
       .then((response) => {
         this.setState({
@@ -80,25 +68,26 @@ export default class App extends Component {
   getEvent = () => {
     axios
       .get(
-        `https://rest.bandsintown.com/artists/${this.state.searchName}/events/?app_id=2bfefdd4b6571ebbc6ba9afbb5bc55d8`
+        `https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=2mitntFIkOiRSejzvu3iHKjtOC6AiuyB&keyword=${this.state.searchName}`
       )
       .then((response) => {
+        console.log(response)
         if (response.data.length === 0) {
           this.setState({
             noData: "No Event Listings",
           });
         } else {
           this.setState({
-            concertInfo: response.data,
+            concertInfo: response.data._embedded.events,
           });
         }
       });
-  };
+      };
 
   getData = () => {
     axios
       .get(
-        `https://theaudiodb.com/api/v1/json/1/search.php?s=${this.state.searchName}`
+        `https://www.theaudiodb.com/api/v1/json/523532/search.php?s=${this.state.searchName}`
       )
       .then((response) => {
         if (response.data.artists === null) {
@@ -149,6 +138,18 @@ export default class App extends Component {
         };
         idSearch();
       });
+  };
+
+  getVideo = async () => {
+    const response = await Youtube.get("/search", {
+      params: {
+        q: this.state.searchName,
+      },
+    });
+
+    this.setState({
+      videos: response.data.items,
+    });
   };
 
   handleVideoSelect = (video) => {

@@ -117,8 +117,8 @@ export default class MainTwo extends Component {
                         <ConcertAPI
                           dateTime={concert.datetime}
                           onSale={concert.on_sale_datetime}
-                          venueName={concert.venue.name}
-                          venueLocation={concert.venue.location}
+                          venueName={concert._embedded.venues.name}
+                          venueLocation={concert._embedded.venues.location}
                           ticketLink={concert.url}
                           noData={this.props.noData}
                         />
@@ -152,6 +152,7 @@ export default class MainTwo extends Component {
                 <div className="card__wrapper-four">
                   <div className="card__one">
                     <VideoDetail video={this.props.selectedVideo} />
+
                     <VideoList
                       handleVideoSelect={this.props.handleVideoSelect}
                       videos={this.props.videos}
@@ -319,8 +320,8 @@ export default class MainTwo extends Component {
                       <ConcertAPI
                         dateTime={concert.datetime}
                         onSale={concert.on_sale_datetime}
-                        venueName={concert.venue.name}
-                        venueLocation={concert.venue.location}
+                        venueName={concert._embedded.venues.name}
+                        venueLocation={concert._embedded.venues.location}
                         ticketLink={concert.url}
                         noData={this.props.noData}
                       />
