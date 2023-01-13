@@ -50,6 +50,15 @@ export default class App extends Component {
   handleSearchName = (event) => {
     this.setState({
       searchName: event.target.value,
+      newsResults: [],
+      videos: [],
+      artistInfo: [],
+      concertInfo: [],
+      discogsInfo: [],
+      audioDB: [],
+      releaseData: [],
+      images: [],
+      selectedVideo: null,
     });
   };
 
@@ -70,6 +79,7 @@ export default class App extends Component {
       .get(
         `https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=2mitntFIkOiRSejzvu3iHKjtOC6AiuyB&keyword=${this.state.searchName}`
       )
+      // .then(res => console.log(res))      
       .then((response) => {
         console.log(response)
         if (response.data.length === 0) {
@@ -159,7 +169,7 @@ export default class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.getData();
-    this.getVideo();
+    // this.getVideo();
     this.getArtist();
     this.getEvent();
     this.getArtistData();
